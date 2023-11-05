@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace BTL_LTTQ_QuanLyBanDienThoai
 {
-    public partial class Form1 : Form
+    public partial class frmManageCategory : Form
     {
-        public Form1()
+        public frmManageCategory()
         {
             InitializeComponent();
         }
