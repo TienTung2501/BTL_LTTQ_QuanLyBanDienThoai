@@ -35,5 +35,6 @@ namespace BTL_LTTQ_QuanLyBanDienThoai
         {
             Application.Exit();
         }
+
     }
 }

@@ -55,6 +55,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\CommonFunctions.cs" />
+    <Compile Include="Classes\DataBaseProcess.cs" />
     <Compile Include="Component\TxtBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -190,5 +192,6 @@
   <ItemGroup>
     <None Include="Resources\male_user_1080px1.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
