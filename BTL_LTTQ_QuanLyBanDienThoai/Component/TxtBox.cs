@@ -13,14 +13,21 @@ namespace BTL_LTTQ_QuanLyBanDienThoai.Component
 {
     public partial class TxtBox : UserControl
     {
+        public event EventHandler TxtBoxTextChanged;
         public TxtBox()
         {
             InitializeComponent();
+            // Gắn sự kiện TextChanged của TextBox với sự kiện của User Control
+
+            txtOnUserControl.TextChanged += (sender, e) => OnTxtBoxTextChanged(EventArgs.Empty);
         }
         private Color borderColor = Color.DeepSkyBlue;
         private int borderSize = 2;
         private bool underLineStyle = false;
-
+        protected virtual void OnTxtBoxTextChanged(EventArgs e)
+        {
+            TxtBoxTextChanged?.Invoke(this, e);
+        }
         public Color BorderColor1
         {
             get => borderColor;

@@ -161,6 +161,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="bin\Debug\BTL_LTTQ_QuanLyBanDienThoai.exe.config" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -193,6 +194,15 @@
   <ItemGroup>
     <None Include="Resources\male_user_1080px1.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="bin\Debug\BTL_LTTQ_QuanLyBanDienThoai.exe" />
+    <Content Include="bin\Debug\BTL_LTTQ_QuanLyBanDienThoai.pdb" />
+    <Content Include="bin\Debug\ReaLTaiizor.dll" />
+    <Content Include="bin\Debug\ReaLTaiizor.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Debug\images\" />
+    <Folder Include="bin\Release\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

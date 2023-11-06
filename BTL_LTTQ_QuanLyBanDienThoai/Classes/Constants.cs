@@ -8,7 +8,7 @@ namespace BTL_LTTQ_QuanLyBanDienThoai.Classes
 {
     internal class Constants
     {
-        public static int userId;
-        public static bool isLogin;
+        public static int userId=1;
+        public static bool isLogin=true;
     }
 }
