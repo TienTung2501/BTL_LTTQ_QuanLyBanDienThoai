@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BTL_LTTQ_QuanLyBanDienThoai.Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace BTL_LTTQ_QuanLyBanDienThoai
 {
@@ -174,6 +176,19 @@ namespace BTL_LTTQ_QuanLyBanDienThoai
             frmOrders frmOrders=new frmOrders();
             this.Hide();
             frmOrders.ShowDialog();
+        }
+
+        private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            DataBaseProcess data = new DataBaseProcess();
+            string query = "SELECT userAccount FROM tblSeller WHERE id ='" +Constants.userId + "'";
+            if(data.DataReader(query).Rows.Count>0)
+            lbUserName.Text =  data.DataReader(query).Rows[0]["userAccount"].ToString();
         }
     }
 }
