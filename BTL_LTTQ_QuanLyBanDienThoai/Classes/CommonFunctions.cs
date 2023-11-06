@@ -15,7 +15,6 @@ namespace BTL_LTTQ_QuanLyBanDienThoai.Classes
             comboName.DataSource = data;
             comboName.DisplayMember = displayMember;
             comboName.ValueMember = valueMember;
-
         }
     }
 }

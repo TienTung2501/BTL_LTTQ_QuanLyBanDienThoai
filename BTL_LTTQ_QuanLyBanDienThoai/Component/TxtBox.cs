@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace BTL_LTTQ_QuanLyBanDienThoai.Component
 {
@@ -64,8 +65,8 @@ namespace BTL_LTTQ_QuanLyBanDienThoai.Component
         }
         public string CustomText
         {
-            get { return base.Text; }
-            set { base.Text = value; }
+            get { return txtOnUserControl.Text; }
+            set { txtOnUserControl.Text = value; }
         }
 
     }

@@ -11,9 +11,7 @@ namespace BTL_LTTQ_QuanLyBanDienThoai.Classes
     internal class DataBaseProcess
     {
         //Khai báo biến toàn cục, bạn phải thay đổi chuối kết nối phù hợp
-        string strConnect = "Data Source=(local)" +
-                "DataBase=BTL_LTTQ;User ID=sa;" +
-                "Password=abc123;Integrated Security=true";
+        string strConnect = "Data Source =(local);Initial Catalog=BTL_LTTQ; User ID=sa; Password=abc123; Integrated Security = True";
         SqlConnection sqlConnect = null;
         //Phương thức mở kết nối
         void OpenConnect()

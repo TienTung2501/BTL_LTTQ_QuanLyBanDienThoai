@@ -28,24 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtOnUserControl = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // textBox1
+            // txtOnUserControl
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.textBox1.Location = new System.Drawing.Point(6, 6);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(388, 20);
-            this.textBox1.TabIndex = 0;
+            this.txtOnUserControl.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtOnUserControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtOnUserControl.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.txtOnUserControl.Location = new System.Drawing.Point(6, 6);
+            this.txtOnUserControl.Name = "txtOnUserControl";
+            this.txtOnUserControl.Size = new System.Drawing.Size(388, 20);
+            this.txtOnUserControl.TabIndex = 0;
             // 
             // TxtBox
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.Transparent;
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtOnUserControl);
             this.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -59,6 +59,6 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtOnUserControl;
     }
 }

@@ -32,7 +32,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -40,9 +39,9 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.btnSearch = new ReaLTaiizor.Controls.FoxButton();
-            this.foxButton2 = new ReaLTaiizor.Controls.FoxButton();
-            this.foxButton3 = new ReaLTaiizor.Controls.FoxButton();
-            this.foxButton4 = new ReaLTaiizor.Controls.FoxButton();
+            this.edit_seller = new ReaLTaiizor.Controls.FoxButton();
+            this.delete_seller = new ReaLTaiizor.Controls.FoxButton();
+            this.add_seller = new ReaLTaiizor.Controls.FoxButton();
             this.txtSearch = new ReaLTaiizor.Controls.RichTextBoxEdit();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Seller_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,12 +51,13 @@
             this.Seller_phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Seller_address = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.txtBoxPassword = new BTL_LTTQ_QuanLyBanDienThoai.Component.TxtBox();
             this.txtBoxUserAccount = new BTL_LTTQ_QuanLyBanDienThoai.Component.TxtBox();
             this.txtBoxAddress = new BTL_LTTQ_QuanLyBanDienThoai.Component.TxtBox();
             this.txtBoxPhone = new BTL_LTTQ_QuanLyBanDienThoai.Component.TxtBox();
+            this.txtBoxUserID = new BTL_LTTQ_QuanLyBanDienThoai.Component.TxtBox();
             this.txtBoxName = new BTL_LTTQ_QuanLyBanDienThoai.Component.TxtBox();
-            this.txtBoxID = new BTL_LTTQ_QuanLyBanDienThoai.Component.TxtBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -74,24 +74,12 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Manage Sellers";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label2.Location = new System.Drawing.Point(258, 58);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(30, 22);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "ID";
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label3.Location = new System.Drawing.Point(417, 56);
+            this.label3.Location = new System.Drawing.Point(391, 37);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(56, 22);
@@ -103,7 +91,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label4.Location = new System.Drawing.Point(907, 56);
+            this.label4.Location = new System.Drawing.Point(902, 37);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(88, 22);
@@ -115,7 +103,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label5.Location = new System.Drawing.Point(701, 58);
+            this.label5.Location = new System.Drawing.Point(698, 37);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(112, 22);
@@ -127,7 +115,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label6.Location = new System.Drawing.Point(258, 129);
+            this.label6.Location = new System.Drawing.Point(258, 124);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(58, 22);
@@ -139,7 +127,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label7.Location = new System.Drawing.Point(417, 129);
+            this.label7.Location = new System.Drawing.Point(417, 124);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(76, 22);
@@ -177,62 +165,64 @@
             this.btnSearch.TabIndex = 6;
             this.btnSearch.Text = "Search";
             // 
-            // foxButton2
+            // edit_seller
             // 
-            this.foxButton2.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
-            this.foxButton2.BorderColor = System.Drawing.Color.DeepSkyBlue;
-            this.foxButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.foxButton2.DisabledBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
-            this.foxButton2.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
-            this.foxButton2.DisabledTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(178)))), ((int)(((byte)(190)))));
-            this.foxButton2.DownColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.foxButton2.EnabledCalc = true;
-            this.foxButton2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.foxButton2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.foxButton2.Location = new System.Drawing.Point(826, 240);
-            this.foxButton2.Name = "foxButton2";
-            this.foxButton2.OverColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.foxButton2.Size = new System.Drawing.Size(113, 40);
-            this.foxButton2.TabIndex = 6;
-            this.foxButton2.Text = "Edit";
+            this.edit_seller.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
+            this.edit_seller.BorderColor = System.Drawing.Color.DeepSkyBlue;
+            this.edit_seller.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.edit_seller.DisabledBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
+            this.edit_seller.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
+            this.edit_seller.DisabledTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(178)))), ((int)(((byte)(190)))));
+            this.edit_seller.DownColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.edit_seller.EnabledCalc = true;
+            this.edit_seller.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.edit_seller.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.edit_seller.Location = new System.Drawing.Point(826, 240);
+            this.edit_seller.Name = "edit_seller";
+            this.edit_seller.OverColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.edit_seller.Size = new System.Drawing.Size(113, 40);
+            this.edit_seller.TabIndex = 6;
+            this.edit_seller.Text = "Edit";
+            this.edit_seller.Click += new ReaLTaiizor.Util.FoxBase.ButtonFoxBase.ClickEventHandler(this.foxButton2_Click);
             // 
-            // foxButton3
+            // delete_seller
             // 
-            this.foxButton3.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
-            this.foxButton3.BorderColor = System.Drawing.Color.DeepSkyBlue;
-            this.foxButton3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.foxButton3.DisabledBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
-            this.foxButton3.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
-            this.foxButton3.DisabledTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(178)))), ((int)(((byte)(190)))));
-            this.foxButton3.DownColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.foxButton3.EnabledCalc = true;
-            this.foxButton3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.foxButton3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.foxButton3.Location = new System.Drawing.Point(947, 240);
-            this.foxButton3.Name = "foxButton3";
-            this.foxButton3.OverColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.foxButton3.Size = new System.Drawing.Size(106, 40);
-            this.foxButton3.TabIndex = 6;
-            this.foxButton3.Text = "Delete";
+            this.delete_seller.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
+            this.delete_seller.BorderColor = System.Drawing.Color.DeepSkyBlue;
+            this.delete_seller.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.delete_seller.DisabledBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
+            this.delete_seller.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
+            this.delete_seller.DisabledTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(178)))), ((int)(((byte)(190)))));
+            this.delete_seller.DownColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.delete_seller.EnabledCalc = true;
+            this.delete_seller.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.delete_seller.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.delete_seller.Location = new System.Drawing.Point(947, 240);
+            this.delete_seller.Name = "delete_seller";
+            this.delete_seller.OverColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.delete_seller.Size = new System.Drawing.Size(106, 40);
+            this.delete_seller.TabIndex = 6;
+            this.delete_seller.Text = "Delete";
             // 
-            // foxButton4
+            // add_seller
             // 
-            this.foxButton4.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
-            this.foxButton4.BorderColor = System.Drawing.Color.DeepSkyBlue;
-            this.foxButton4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.foxButton4.DisabledBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
-            this.foxButton4.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
-            this.foxButton4.DisabledTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(178)))), ((int)(((byte)(190)))));
-            this.foxButton4.DownColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.foxButton4.EnabledCalc = true;
-            this.foxButton4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.foxButton4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.foxButton4.Location = new System.Drawing.Point(702, 240);
-            this.foxButton4.Name = "foxButton4";
-            this.foxButton4.OverColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.foxButton4.Size = new System.Drawing.Size(110, 40);
-            this.foxButton4.TabIndex = 6;
-            this.foxButton4.Text = "Add";
+            this.add_seller.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
+            this.add_seller.BorderColor = System.Drawing.Color.DeepSkyBlue;
+            this.add_seller.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.add_seller.DisabledBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
+            this.add_seller.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
+            this.add_seller.DisabledTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(178)))), ((int)(((byte)(190)))));
+            this.add_seller.DownColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.add_seller.EnabledCalc = true;
+            this.add_seller.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.add_seller.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.add_seller.Location = new System.Drawing.Point(702, 240);
+            this.add_seller.Name = "add_seller";
+            this.add_seller.OverColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.add_seller.Size = new System.Drawing.Size(110, 40);
+            this.add_seller.TabIndex = 6;
+            this.add_seller.Text = "Add";
+            this.add_seller.Click += new ReaLTaiizor.Util.FoxBase.ButtonFoxBase.ClickEventHandler(this.foxButton4_Click);
             // 
             // txtSearch
             // 
@@ -272,7 +262,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.ColumnHeadersHeight = 45;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Seller_ID,
             this.Seller_name,
@@ -293,7 +283,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.RowTemplate.Height = 45;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(1034, 284);
             this.dataGridView1.TabIndex = 9;
@@ -350,6 +340,18 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label2.Location = new System.Drawing.Point(258, 37);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(30, 22);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "ID";
+            // 
             // txtBoxPassword
             // 
             this.txtBoxPassword.BackColor = System.Drawing.Color.Transparent;
@@ -358,7 +360,7 @@
             this.txtBoxPassword.CustomText = "";
             this.txtBoxPassword.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxPassword.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.txtBoxPassword.Location = new System.Drawing.Point(899, 90);
+            this.txtBoxPassword.Location = new System.Drawing.Point(894, 71);
             this.txtBoxPassword.Margin = new System.Windows.Forms.Padding(4);
             this.txtBoxPassword.Name = "txtBoxPassword";
             this.txtBoxPassword.Padding = new System.Windows.Forms.Padding(6);
@@ -374,7 +376,7 @@
             this.txtBoxUserAccount.CustomText = "";
             this.txtBoxUserAccount.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxUserAccount.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.txtBoxUserAccount.Location = new System.Drawing.Point(684, 90);
+            this.txtBoxUserAccount.Location = new System.Drawing.Point(702, 69);
             this.txtBoxUserAccount.Margin = new System.Windows.Forms.Padding(4);
             this.txtBoxUserAccount.Name = "txtBoxUserAccount";
             this.txtBoxUserAccount.Padding = new System.Windows.Forms.Padding(6);
@@ -414,6 +416,23 @@
             this.txtBoxPhone.TabIndex = 3;
             this.txtBoxPhone.UnderLineStyle = true;
             // 
+            // txtBoxUserID
+            // 
+            this.txtBoxUserID.BackColor = System.Drawing.Color.Transparent;
+            this.txtBoxUserID.BorderColor1 = System.Drawing.Color.DeepSkyBlue;
+            this.txtBoxUserID.BorderSize1 = 2;
+            this.txtBoxUserID.CustomText = "";
+            this.txtBoxUserID.Enabled = false;
+            this.txtBoxUserID.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxUserID.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.txtBoxUserID.Location = new System.Drawing.Point(262, 71);
+            this.txtBoxUserID.Margin = new System.Windows.Forms.Padding(4);
+            this.txtBoxUserID.Name = "txtBoxUserID";
+            this.txtBoxUserID.Padding = new System.Windows.Forms.Padding(6);
+            this.txtBoxUserID.Size = new System.Drawing.Size(86, 30);
+            this.txtBoxUserID.TabIndex = 3;
+            this.txtBoxUserID.UnderLineStyle = true;
+            // 
             // txtBoxName
             // 
             this.txtBoxName.BackColor = System.Drawing.Color.Transparent;
@@ -422,29 +441,13 @@
             this.txtBoxName.CustomText = "";
             this.txtBoxName.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxName.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.txtBoxName.Location = new System.Drawing.Point(421, 90);
+            this.txtBoxName.Location = new System.Drawing.Point(395, 71);
             this.txtBoxName.Margin = new System.Windows.Forms.Padding(4);
             this.txtBoxName.Name = "txtBoxName";
             this.txtBoxName.Padding = new System.Windows.Forms.Padding(6);
-            this.txtBoxName.Size = new System.Drawing.Size(192, 30);
+            this.txtBoxName.Size = new System.Drawing.Size(265, 30);
             this.txtBoxName.TabIndex = 3;
             this.txtBoxName.UnderLineStyle = true;
-            // 
-            // txtBoxID
-            // 
-            this.txtBoxID.BackColor = System.Drawing.Color.Transparent;
-            this.txtBoxID.BorderColor1 = System.Drawing.Color.DeepSkyBlue;
-            this.txtBoxID.BorderSize1 = 2;
-            this.txtBoxID.CustomText = "";
-            this.txtBoxID.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxID.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.txtBoxID.Location = new System.Drawing.Point(262, 90);
-            this.txtBoxID.Margin = new System.Windows.Forms.Padding(4);
-            this.txtBoxID.Name = "txtBoxID";
-            this.txtBoxID.Padding = new System.Windows.Forms.Padding(6);
-            this.txtBoxID.Size = new System.Drawing.Size(121, 30);
-            this.txtBoxID.TabIndex = 3;
-            this.txtBoxID.UnderLineStyle = true;
             // 
             // frmManageSellers
             // 
@@ -454,23 +457,23 @@
             this.ClientSize = new System.Drawing.Size(1080, 618);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.txtSearch);
-            this.Controls.Add(this.foxButton3);
-            this.Controls.Add(this.foxButton2);
-            this.Controls.Add(this.foxButton4);
+            this.Controls.Add(this.delete_seller);
+            this.Controls.Add(this.edit_seller);
+            this.Controls.Add(this.add_seller);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.txtBoxPassword);
             this.Controls.Add(this.txtBoxUserAccount);
             this.Controls.Add(this.txtBoxAddress);
             this.Controls.Add(this.txtBoxPhone);
+            this.Controls.Add(this.txtBoxUserID);
             this.Controls.Add(this.txtBoxName);
-            this.Controls.Add(this.txtBoxID);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -489,7 +492,6 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
@@ -497,16 +499,15 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private Component.TxtBox txtBoxID;
         private Component.TxtBox txtBoxPhone;
         private Component.TxtBox txtBoxUserAccount;
         private Component.TxtBox txtBoxPassword;
         private Component.TxtBox txtBoxAddress;
         private Component.TxtBox txtBoxName;
         private ReaLTaiizor.Controls.FoxButton btnSearch;
-        private ReaLTaiizor.Controls.FoxButton foxButton2;
-        private ReaLTaiizor.Controls.FoxButton foxButton3;
-        private ReaLTaiizor.Controls.FoxButton foxButton4;
+        private ReaLTaiizor.Controls.FoxButton edit_seller;
+        private ReaLTaiizor.Controls.FoxButton delete_seller;
+        private ReaLTaiizor.Controls.FoxButton add_seller;
         private ReaLTaiizor.Controls.RichTextBoxEdit txtSearch;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Seller_ID;
@@ -515,5 +516,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Seller_password;
         private System.Windows.Forms.DataGridViewTextBoxColumn Seller_phone;
         private System.Windows.Forms.DataGridViewTextBoxColumn Seller_address;
+        private System.Windows.Forms.Label label2;
+        private Component.TxtBox txtBoxUserID;
     }
 }
