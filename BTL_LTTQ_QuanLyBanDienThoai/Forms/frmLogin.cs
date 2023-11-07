@@ -31,9 +31,11 @@ namespace BTL_LTTQ_QuanLyBanDienThoai
             {
                 Constants.userId = int.Parse(data.DataReader(query).Rows[0]["id"].ToString());
                 Constants.isLogin = true;
+             
                 MainForm frmMain = new MainForm();
                 frmMain.ShowDialog();
                 this.Hide();
+                
             }
             else
             {
@@ -53,6 +55,7 @@ namespace BTL_LTTQ_QuanLyBanDienThoai
         private void airButton2_Click(object sender, EventArgs e)
         {
             this.Close();
+            Application.Exit();
         }
     }
 }

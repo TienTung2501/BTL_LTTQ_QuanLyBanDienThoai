@@ -1020,7 +1020,7 @@
             this.txtDiscount.Size = new System.Drawing.Size(55, 30);
             this.txtDiscount.TabIndex = 9;
             this.txtDiscount.UnderLineStyle = true;
-            this.txtDiscount.TxtBoxTextChanged += new System.EventHandler(this.txtDiscount_TxtBoxTextChanged);
+          
             // 
             // txtProductQuantity
             // 
@@ -1037,7 +1037,7 @@
             this.txtProductQuantity.Size = new System.Drawing.Size(85, 30);
             this.txtProductQuantity.TabIndex = 9;
             this.txtProductQuantity.UnderLineStyle = true;
-            this.txtProductQuantity.TxtBoxTextChanged += new System.EventHandler(this.txtProductQuantity_TxtBoxTextChanged);
+        
             // 
             // panel8
             // 

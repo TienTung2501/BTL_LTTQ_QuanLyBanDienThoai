@@ -35,7 +35,7 @@ namespace BTL_LTTQ_QuanLyBanDienThoai
                 DataTable query = data.DataReader("Select * From tblCategory where name = '" + txtName.CustomText + "'");
                 if (query.Rows.Count >0)
                 {
-                    MessageBox.Show("Danh mục này đã tồn tại, mời nhập danh mục khác");
+                    lbWarning.Text = "Danh mục này đã tồn tại, mời nhập danh mục khác!!!";
                     txtName.CustomText = "";
                 }
                 else

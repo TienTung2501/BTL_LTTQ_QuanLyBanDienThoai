@@ -28,15 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.dgvProducts = new System.Windows.Forms.DataGridView();
             this.cboCategory2 = new ReaLTaiizor.Controls.HopeComboBox();
             this.btnAdd = new ReaLTaiizor.Controls.FoxButton();
@@ -46,10 +46,10 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtDesc = new BTL_LTTQ_QuanLyBanDienThoai.Component.TxtBox();
-            this.txtQuantity = new BTL_LTTQ_QuanLyBanDienThoai.Component.TxtBox();
-            this.txtPrice = new BTL_LTTQ_QuanLyBanDienThoai.Component.TxtBox();
             this.txtName = new BTL_LTTQ_QuanLyBanDienThoai.Component.TxtBox();
             this.txtID = new BTL_LTTQ_QuanLyBanDienThoai.Component.TxtBox();
+            this.txtPrice = new System.Windows.Forms.TextBox();
+            this.txtQuantity = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -110,43 +110,44 @@
             this.label5.TabIndex = 8;
             this.label5.Text = "Quantity";
             // 
-            // button4
+            // btnRefresh
             // 
-            this.button4.Font = new System.Drawing.Font("Arial Narrow", 10F, System.Drawing.FontStyle.Bold);
-            this.button4.Location = new System.Drawing.Point(946, 79);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(127, 36);
-            this.button4.TabIndex = 16;
-            this.button4.Text = "Refresh";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnRefresh.Font = new System.Drawing.Font("Arial Narrow", 10F, System.Drawing.FontStyle.Bold);
+            this.btnRefresh.Location = new System.Drawing.Point(946, 79);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(127, 36);
+            this.btnRefresh.TabIndex = 16;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // dgvProducts
             // 
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 12F);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            this.dgvProducts.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Times New Roman", 12F);
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
+            this.dgvProducts.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvProducts.BackgroundColor = System.Drawing.Color.White;
             this.dgvProducts.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvProducts.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvProducts.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.LimeGreen;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Arial Narrow", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvProducts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.LimeGreen;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Arial Narrow", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvProducts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dgvProducts.ColumnHeadersHeight = 50;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.LightYellow;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Arial Narrow", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlDark;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.DarkSeaGreen;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvProducts.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.LightYellow;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Arial Narrow", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlDark;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.DarkSeaGreen;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvProducts.DefaultCellStyle = dataGridViewCellStyle12;
             this.dgvProducts.EnableHeadersVisualStyles = false;
             this.dgvProducts.Location = new System.Drawing.Point(436, 137);
             this.dgvProducts.Name = "dgvProducts";
@@ -157,11 +158,13 @@
             this.dgvProducts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvProducts.Size = new System.Drawing.Size(629, 583);
             this.dgvProducts.TabIndex = 22;
+            this.dgvProducts.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProducts_CellClick);
             // 
             // cboCategory2
             // 
             this.cboCategory2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cboCategory2.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cboCategory2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboCategory2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboCategory2.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboCategory2.ForeColor = System.Drawing.Color.ForestGreen;
@@ -175,6 +178,7 @@
             this.cboCategory2.Name = "cboCategory2";
             this.cboCategory2.Size = new System.Drawing.Size(240, 36);
             this.cboCategory2.TabIndex = 23;
+            this.cboCategory2.SelectedIndexChanged += new System.EventHandler(this.cboCategory2_SelectedIndexChanged);
             // 
             // btnAdd
             // 
@@ -214,6 +218,7 @@
             this.btnEdit.Size = new System.Drawing.Size(120, 40);
             this.btnEdit.TabIndex = 26;
             this.btnEdit.Text = "Edit";
+            this.btnEdit.Click += new ReaLTaiizor.Util.FoxBase.ButtonFoxBase.ClickEventHandler(this.btnEdit_Click);
             // 
             // btnDelete
             // 
@@ -233,11 +238,13 @@
             this.btnDelete.Size = new System.Drawing.Size(120, 40);
             this.btnDelete.TabIndex = 27;
             this.btnDelete.Text = "Delete";
+            this.btnDelete.Click += new ReaLTaiizor.Util.FoxBase.ButtonFoxBase.ClickEventHandler(this.btnDelete_Click);
             // 
             // cboCategory1
             // 
             this.cboCategory1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cboCategory1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cboCategory1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboCategory1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboCategory1.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboCategory1.ForeColor = System.Drawing.Color.ForestGreen;
@@ -255,7 +262,7 @@
             // pictureBox2
             // 
             this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox2.Location = new System.Drawing.Point(67, 70);
+            this.pictureBox2.Location = new System.Drawing.Point(149, 70);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(136, 153);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -290,44 +297,10 @@
             this.txtDesc.TabIndex = 31;
             this.txtDesc.UnderLineStyle = true;
             // 
-            // txtQuantity
-            // 
-            this.txtQuantity.BackColor = System.Drawing.Color.Transparent;
-            this.txtQuantity.BorderColor1 = System.Drawing.SystemColors.AppWorkspace;
-            this.txtQuantity.BorderSize1 = 2;
-            this.txtQuantity.CustomText = "";
-            this.txtQuantity.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQuantity.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.txtQuantity.Location = new System.Drawing.Point(149, 397);
-            this.txtQuantity.Margin = new System.Windows.Forms.Padding(4);
-            this.txtQuantity.Name = "txtQuantity";
-            this.txtQuantity.Padding = new System.Windows.Forms.Padding(6);
-            this.txtQuantity.Size = new System.Drawing.Size(263, 30);
-            this.txtQuantity.TabIndex = 20;
-            this.txtQuantity.UnderLineStyle = true;
-            this.txtQuantity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQuantity_KeyPress);
-            // 
-            // txtPrice
-            // 
-            this.txtPrice.BackColor = System.Drawing.Color.Transparent;
-            this.txtPrice.BorderColor1 = System.Drawing.SystemColors.AppWorkspace;
-            this.txtPrice.BorderSize1 = 2;
-            this.txtPrice.CustomText = "";
-            this.txtPrice.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrice.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.txtPrice.Location = new System.Drawing.Point(149, 350);
-            this.txtPrice.Margin = new System.Windows.Forms.Padding(4);
-            this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Padding = new System.Windows.Forms.Padding(6);
-            this.txtPrice.Size = new System.Drawing.Size(263, 30);
-            this.txtPrice.TabIndex = 19;
-            this.txtPrice.UnderLineStyle = true;
-            this.txtPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrice_KeyPress);
-            // 
             // txtName
             // 
-            this.txtName.BackColor = System.Drawing.Color.Transparent;
-            this.txtName.BorderColor1 = System.Drawing.SystemColors.AppWorkspace;
+            this.txtName.BackColor = System.Drawing.SystemColors.Control;
+            this.txtName.BorderColor1 = System.Drawing.SystemColors.ControlDark;
             this.txtName.BorderSize1 = 2;
             this.txtName.CustomText = "";
             this.txtName.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -343,7 +316,7 @@
             // txtID
             // 
             this.txtID.BackColor = System.Drawing.Color.Transparent;
-            this.txtID.BorderColor1 = System.Drawing.SystemColors.AppWorkspace;
+            this.txtID.BorderColor1 = System.Drawing.SystemColors.Control;
             this.txtID.BorderSize1 = 2;
             this.txtID.CustomText = "";
             this.txtID.Enabled = false;
@@ -357,12 +330,32 @@
             this.txtID.TabIndex = 17;
             this.txtID.UnderLineStyle = true;
             // 
+            // txtPrice
+            // 
+            this.txtPrice.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold);
+            this.txtPrice.Location = new System.Drawing.Point(149, 353);
+            this.txtPrice.Name = "txtPrice";
+            this.txtPrice.Size = new System.Drawing.Size(263, 31);
+            this.txtPrice.TabIndex = 32;
+            this.txtPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrice_KeyPress_1);
+            // 
+            // txtQuantity
+            // 
+            this.txtQuantity.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold);
+            this.txtQuantity.Location = new System.Drawing.Point(149, 401);
+            this.txtQuantity.Name = "txtQuantity";
+            this.txtQuantity.Size = new System.Drawing.Size(263, 31);
+            this.txtQuantity.TabIndex = 33;
+            this.txtQuantity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQuantity_KeyPress_1);
+            // 
             // frmProducts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1092, 741);
+            this.Controls.Add(this.txtQuantity);
+            this.Controls.Add(this.txtPrice);
             this.Controls.Add(this.txtDesc);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.pictureBox2);
@@ -372,11 +365,9 @@
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.cboCategory2);
             this.Controls.Add(this.dgvProducts);
-            this.Controls.Add(this.txtQuantity);
-            this.Controls.Add(this.txtPrice);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.txtID);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -385,6 +376,7 @@
             this.Font = new System.Drawing.Font("Arial Narrow", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.HelpButton = true;
             this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.Name = "frmProducts";
             this.Text = "frmProducts";
@@ -403,11 +395,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnRefresh;
         private Component.TxtBox txtID;
         private Component.TxtBox txtName;
-        private Component.TxtBox txtPrice;
-        private Component.TxtBox txtQuantity;
         private System.Windows.Forms.DataGridView dgvProducts;
         private ReaLTaiizor.Controls.HopeComboBox cboCategory2;
         private ReaLTaiizor.Controls.FoxButton btnAdd;
@@ -417,5 +407,7 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private Component.TxtBox txtDesc;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtPrice;
+        private System.Windows.Forms.TextBox txtQuantity;
     }
 }
