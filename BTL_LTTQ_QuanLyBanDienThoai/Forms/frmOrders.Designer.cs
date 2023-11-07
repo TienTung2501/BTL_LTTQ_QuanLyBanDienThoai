@@ -58,7 +58,7 @@
             this.btn_createID = new ReaLTaiizor.Controls.FoxButton();
             this.btn_prinOrder = new ReaLTaiizor.Controls.FoxButton();
             this.panel11 = new System.Windows.Forms.Panel();
-            this.DateBill = new System.Windows.Forms.Label();
+            this.dateNow = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.foxButton1 = new ReaLTaiizor.Controls.FoxButton();
@@ -306,6 +306,7 @@
             this.dataGrBill.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGrBill.Size = new System.Drawing.Size(538, 264);
             this.dataGrBill.TabIndex = 12;
+            this.dataGrBill.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGrBill_CellContentClick);
             // 
             // Bill_ID
             // 
@@ -400,7 +401,7 @@
             // panel11
             // 
             this.panel11.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.panel11.Controls.Add(this.DateBill);
+            this.panel11.Controls.Add(this.dateNow);
             this.panel11.Controls.Add(this.label8);
             this.panel11.Controls.Add(this.label9);
             this.panel11.Dock = System.Windows.Forms.DockStyle.Top;
@@ -410,20 +411,21 @@
             this.panel11.Size = new System.Drawing.Size(280, 49);
             this.panel11.TabIndex = 18;
             // 
-            // DateBill
+            // dateNow
             // 
-            this.DateBill.AutoSize = true;
-            this.DateBill.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DateBill.Location = new System.Drawing.Point(70, 12);
-            this.DateBill.Name = "DateBill";
-            this.DateBill.Size = new System.Drawing.Size(0, 23);
-            this.DateBill.TabIndex = 0;
+            this.dateNow.AutoSize = true;
+            this.dateNow.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateNow.Location = new System.Drawing.Point(68, 13);
+            this.dateNow.Name = "dateNow";
+            this.dateNow.Size = new System.Drawing.Size(122, 23);
+            this.dateNow.TabIndex = 0;
+            this.dateNow.Text = "datedateNow";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(6, 12);
+            this.label8.Location = new System.Drawing.Point(7, 13);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(58, 23);
             this.label8.TabIndex = 0;
@@ -479,6 +481,7 @@
             this.btnSaveOder.Size = new System.Drawing.Size(128, 42);
             this.btnSaveOder.TabIndex = 13;
             this.btnSaveOder.Text = "Add Ord";
+            this.btnSaveOder.Click += new ReaLTaiizor.Util.FoxBase.ButtonFoxBase.ClickEventHandler(this.btnSaveOder_Click);
             // 
             // label13
             // 
@@ -609,6 +612,7 @@
             this.dataGrBilldetail.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGrBilldetail.Size = new System.Drawing.Size(828, 343);
             this.dataGrBilldetail.TabIndex = 16;
+            this.dataGrBilldetail.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGrBilldetail_CellContentClick);
             // 
             // Product_Id
             // 
@@ -1227,7 +1231,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Bill_Date;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.Label DateBill;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private Component.TxtBox txtBillID;
@@ -1253,5 +1256,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Category_product;
         private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
         private System.Windows.Forms.DataGridViewTextBoxColumn Product_price;
+        private System.Windows.Forms.Label dateNow;
     }
 }
