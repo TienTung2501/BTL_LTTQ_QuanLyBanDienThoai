@@ -16,7 +16,7 @@ namespace BTL_LTTQ_QuanLyBanDienThoai
         {
             //Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmOrders());
+            Application.Run(new FrmProcessBar());
         }
     }
 }

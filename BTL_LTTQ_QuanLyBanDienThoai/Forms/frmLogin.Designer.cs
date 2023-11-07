@@ -32,13 +32,13 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.airButton2 = new ReaLTaiizor.Controls.AirButton();
+            this.airButton1 = new ReaLTaiizor.Controls.AirButton();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.airButton2 = new ReaLTaiizor.Controls.AirButton();
-            this.airButton1 = new ReaLTaiizor.Controls.AirButton();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -85,6 +85,36 @@
             this.groupBox2.Size = new System.Drawing.Size(491, 448);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
+            // 
+            // airButton2
+            // 
+            this.airButton2.BackColor = System.Drawing.Color.White;
+            this.airButton2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.airButton2.Customization = "7e3t//Ly8v/r6+v/5ubm/+vr6//f39//p6en/zw8PP8UFBT/gICA/w==";
+            this.airButton2.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.airButton2.Image = null;
+            this.airButton2.Location = new System.Drawing.Point(455, 12);
+            this.airButton2.Name = "airButton2";
+            this.airButton2.NoRounding = true;
+            this.airButton2.Size = new System.Drawing.Size(32, 32);
+            this.airButton2.TabIndex = 14;
+            this.airButton2.Text = "X";
+            this.airButton2.Transparent = true;
+            // 
+            // airButton1
+            // 
+            this.airButton1.BackColor = System.Drawing.Color.White;
+            this.airButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.airButton1.Customization = "7e3t//Ly8v/r6+v/5ubm/+vr6//f39//p6en/zw8PP8UFBT/gICA/w==";
+            this.airButton1.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.airButton1.Image = null;
+            this.airButton1.Location = new System.Drawing.Point(417, 12);
+            this.airButton1.Name = "airButton1";
+            this.airButton1.NoRounding = true;
+            this.airButton1.Size = new System.Drawing.Size(32, 32);
+            this.airButton1.TabIndex = 15;
+            this.airButton1.Text = "-";
+            this.airButton1.Transparent = true;
             // 
             // button2
             // 
@@ -143,36 +173,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Login";
             // 
-            // airButton2
-            // 
-            this.airButton2.BackColor = System.Drawing.Color.White;
-            this.airButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.airButton2.Customization = "7e3t//Ly8v/r6+v/5ubm/+vr6//f39//p6en/zw8PP8UFBT/gICA/w==";
-            this.airButton2.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.airButton2.Image = null;
-            this.airButton2.Location = new System.Drawing.Point(455, 12);
-            this.airButton2.Name = "airButton2";
-            this.airButton2.NoRounding = true;
-            this.airButton2.Size = new System.Drawing.Size(32, 32);
-            this.airButton2.TabIndex = 14;
-            this.airButton2.Text = "X";
-            this.airButton2.Transparent = true;
-            // 
-            // airButton1
-            // 
-            this.airButton1.BackColor = System.Drawing.Color.White;
-            this.airButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.airButton1.Customization = "7e3t//Ly8v/r6+v/5ubm/+vr6//f39//p6en/zw8PP8UFBT/gICA/w==";
-            this.airButton1.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.airButton1.Image = null;
-            this.airButton1.Location = new System.Drawing.Point(417, 12);
-            this.airButton1.Name = "airButton1";
-            this.airButton1.NoRounding = true;
-            this.airButton1.Size = new System.Drawing.Size(32, 32);
-            this.airButton1.TabIndex = 15;
-            this.airButton1.Text = "-";
-            this.airButton1.Transparent = true;
-            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -184,6 +184,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmLogin";
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
