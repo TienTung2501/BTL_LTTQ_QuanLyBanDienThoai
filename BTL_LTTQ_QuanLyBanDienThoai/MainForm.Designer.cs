@@ -36,7 +36,7 @@
             this.flpSidebar = new System.Windows.Forms.FlowLayoutPanel();
             this.panel11 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lbUserName = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnProducts = new System.Windows.Forms.Button();
@@ -50,10 +50,6 @@
             this.btnBills = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnSettings = new System.Windows.Forms.Button();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.btnAbouts = new System.Windows.Forms.Button();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.button7 = new System.Windows.Forms.Button();
             this.panel10 = new System.Windows.Forms.Panel();
             this.btnLogout = new System.Windows.Forms.Button();
             this.sidebarTransaction = new System.Windows.Forms.Timer(this.components);
@@ -68,8 +64,6 @@
             this.panel4.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.panel8.SuspendLayout();
-            this.panel9.SuspendLayout();
             this.panel10.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -131,13 +125,12 @@
             this.flpSidebar.Controls.Add(this.panel4);
             this.flpSidebar.Controls.Add(this.panel7);
             this.flpSidebar.Controls.Add(this.panel3);
-            this.flpSidebar.Controls.Add(this.panel8);
             this.flpSidebar.Controls.Add(this.panel10);
             this.flpSidebar.Dock = System.Windows.Forms.DockStyle.Left;
             this.flpSidebar.Location = new System.Drawing.Point(0, 32);
             this.flpSidebar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.flpSidebar.Name = "flpSidebar";
-            this.flpSidebar.Size = new System.Drawing.Size(248, 826);
+            this.flpSidebar.Size = new System.Drawing.Size(248, 741);
             this.flpSidebar.TabIndex = 1;
             // 
             // panel11
@@ -145,7 +138,7 @@
             this.panel11.BackColor = System.Drawing.Color.IndianRed;
             this.panel11.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel11.Controls.Add(this.label3);
-            this.panel11.Controls.Add(this.label2);
+            this.panel11.Controls.Add(this.lbUserName);
             this.panel11.Controls.Add(this.pictureBox2);
             this.panel11.Location = new System.Drawing.Point(0, 0);
             this.panel11.Margin = new System.Windows.Forms.Padding(0);
@@ -160,23 +153,23 @@
             this.label3.Location = new System.Drawing.Point(87, 130);
             this.label3.Margin = new System.Windows.Forms.Padding(0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(69, 24);
+            this.label3.Size = new System.Drawing.Size(88, 29);
             this.label3.TabIndex = 2;
             this.label3.Text = "Admin";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label2
+            // lbUserName
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.label2.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.label2.Location = new System.Drawing.Point(87, 97);
-            this.label2.Margin = new System.Windows.Forms.Padding(0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(88, 24);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Trungdz";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbUserName.AutoSize = true;
+            this.lbUserName.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.lbUserName.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.lbUserName.Location = new System.Drawing.Point(87, 97);
+            this.lbUserName.Margin = new System.Windows.Forms.Padding(0);
+            this.lbUserName.Name = "lbUserName";
+            this.lbUserName.Size = new System.Drawing.Size(108, 29);
+            this.lbUserName.TabIndex = 1;
+            this.lbUserName.Text = "Trungdz";
+            this.lbUserName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox2
             // 
@@ -361,67 +354,12 @@
             this.btnSettings.UseVisualStyleBackColor = false;
             this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
             // 
-            // panel8
-            // 
-            this.panel8.BackColor = System.Drawing.Color.White;
-            this.panel8.Controls.Add(this.btnAbouts);
-            this.panel8.Controls.Add(this.panel9);
-            this.panel8.Location = new System.Drawing.Point(4, 675);
-            this.panel8.Margin = new System.Windows.Forms.Padding(4, 115, 4, 3);
-            this.panel8.Name = "panel8";
-            this.panel8.Padding = new System.Windows.Forms.Padding(0, 31, 0, 0);
-            this.panel8.Size = new System.Drawing.Size(240, 60);
-            this.panel8.TabIndex = 5;
-            // 
-            // btnAbouts
-            // 
-            this.btnAbouts.BackColor = System.Drawing.Color.White;
-            this.btnAbouts.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.btnAbouts.Image = ((System.Drawing.Image)(resources.GetObject("btnAbouts.Image")));
-            this.btnAbouts.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAbouts.Location = new System.Drawing.Point(-4, 0);
-            this.btnAbouts.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btnAbouts.Name = "btnAbouts";
-            this.btnAbouts.Padding = new System.Windows.Forms.Padding(31, 0, 0, 0);
-            this.btnAbouts.Size = new System.Drawing.Size(247, 70);
-            this.btnAbouts.TabIndex = 2;
-            this.btnAbouts.Text = "            Abouts";
-            this.btnAbouts.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAbouts.UseVisualStyleBackColor = false;
-            // 
-            // panel9
-            // 
-            this.panel9.BackColor = System.Drawing.Color.White;
-            this.panel9.Controls.Add(this.button7);
-            this.panel9.Location = new System.Drawing.Point(0, 74);
-            this.panel9.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.panel9.Name = "panel9";
-            this.panel9.Padding = new System.Windows.Forms.Padding(0, 31, 0, 0);
-            this.panel9.Size = new System.Drawing.Size(293, 70);
-            this.panel9.TabIndex = 4;
-            // 
-            // button7
-            // 
-            this.button7.BackColor = System.Drawing.Color.White;
-            this.button7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Image = ((System.Drawing.Image)(resources.GetObject("button7.Image")));
-            this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button7.Location = new System.Drawing.Point(4, 5);
-            this.button7.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.button7.Name = "button7";
-            this.button7.Padding = new System.Windows.Forms.Padding(31, 0, 0, 0);
-            this.button7.Size = new System.Drawing.Size(281, 65);
-            this.button7.TabIndex = 2;
-            this.button7.Text = "               Products";
-            this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button7.UseVisualStyleBackColor = false;
-            // 
             // panel10
             // 
             this.panel10.BackColor = System.Drawing.Color.White;
             this.panel10.Controls.Add(this.btnLogout);
-            this.panel10.Location = new System.Drawing.Point(4, 741);
-            this.panel10.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.panel10.Location = new System.Drawing.Point(4, 675);
+            this.panel10.Margin = new System.Windows.Forms.Padding(4, 115, 4, 3);
             this.panel10.Name = "panel10";
             this.panel10.Padding = new System.Windows.Forms.Padding(0, 31, 0, 0);
             this.panel10.Size = new System.Drawing.Size(240, 60);
@@ -433,7 +371,7 @@
             this.btnLogout.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnLogout.Image = ((System.Drawing.Image)(resources.GetObject("btnLogout.Image")));
             this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLogout.Location = new System.Drawing.Point(-4, 0);
+            this.btnLogout.Location = new System.Drawing.Point(0, 0);
             this.btnLogout.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Padding = new System.Windows.Forms.Padding(31, 0, 0, 0);
@@ -450,9 +388,9 @@
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1328, 858);
+            this.ClientSize = new System.Drawing.Size(1328, 773);
             this.Controls.Add(this.flpSidebar);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -463,6 +401,8 @@
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).EndInit();
             this.flpSidebar.ResumeLayout(false);
@@ -475,8 +415,6 @@
             this.panel4.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
-            this.panel8.ResumeLayout(false);
-            this.panel9.ResumeLayout(false);
             this.panel10.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -499,17 +437,13 @@
         private System.Windows.Forms.Button btnSellers;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Button btnBills;
-        private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Button btnAbouts;
-        private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.Button btnLogout;
         private ReaLTaiizor.Controls.NightControlBox nightControlBox1;
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbUserName;
         private System.Windows.Forms.Timer sidebarTransaction;
     }
 }

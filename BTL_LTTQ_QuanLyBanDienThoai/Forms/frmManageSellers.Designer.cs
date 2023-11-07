@@ -510,6 +510,7 @@
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "frmManageSellers";
             this.Text = "frmManageSellers";
+            this.Load += new System.EventHandler(this.frmManageSellers_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGrSeller)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

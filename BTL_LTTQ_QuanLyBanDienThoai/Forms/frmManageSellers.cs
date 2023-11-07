@@ -21,7 +21,10 @@ namespace BTL_LTTQ_QuanLyBanDienThoai
             InitializeComponent();
             showData(query1);
         }
-
+        private void frmManageSellers_Load(object sender, EventArgs e)
+        {
+            showData(query1);
+        }
         private void foxButton4_Click(object sender, EventArgs e)
         {
 
@@ -33,7 +36,6 @@ namespace BTL_LTTQ_QuanLyBanDienThoai
             string insertQuery = "INSERT INTO tblSeller (name, userAccount, password, phone, address) VALUES (N'" + name + "', N'" + userAccount + "', '" + password + "', '" + phoneNumber + "', '" + address + "')";
             excuteSql(insertQuery,"isAdd"); 
             showData(query1);
-
         }
         private void foxButton2_Click(object sender, EventArgs e)
         {
@@ -169,6 +171,8 @@ namespace BTL_LTTQ_QuanLyBanDienThoai
             {
                 query = "SELECT * FROM tblSeller WHERE id = " + id + " OR name = N'" + searchText + "' OR phone = N'" + searchText + "'";
             }
+            if(txtSearch.Text.Trim()=="")
+                query = "SELECT * FROM tblSeller";
             showData(query);
 
         }
@@ -188,5 +192,6 @@ namespace BTL_LTTQ_QuanLyBanDienThoai
                 txtSearch.Text = "Search";
             }
         }
+
     }
 }
