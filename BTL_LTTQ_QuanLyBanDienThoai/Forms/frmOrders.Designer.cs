@@ -49,11 +49,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
             this.dataGrBill = new System.Windows.Forms.DataGridView();
-            this.Bill_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Customer_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Seller_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Bill_Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel5 = new System.Windows.Forms.Panel();
             this.btn_createID = new ReaLTaiizor.Controls.FoxButton();
             this.btn_prinOrder = new ReaLTaiizor.Controls.FoxButton();
@@ -71,20 +66,9 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.dataGrBilldetail = new System.Windows.Forms.DataGridView();
-            this.Product_Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GiamGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.dataGrProduct = new System.Windows.Forms.DataGridView();
-            this.ID_Product = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Product_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Category_product = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Product_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel6 = new System.Windows.Forms.Panel();
             this.btn_Clear = new ReaLTaiizor.Controls.FoxButton();
             this.btn_AddProduct = new ReaLTaiizor.Controls.FoxButton();
@@ -99,6 +83,22 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.Name_product = new System.Windows.Forms.Label();
+            this.Product_Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GiamGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID_Product = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Product_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Category_product = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Product_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Bill_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Customer_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Seller_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Bill_Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtTotalPay = new BTL_LTTQ_QuanLyBanDienThoai.Component.TxtBox();
             this.txtBillID = new BTL_LTTQ_QuanLyBanDienThoai.Component.TxtBox();
             this.txtCustomerAddress = new BTL_LTTQ_QuanLyBanDienThoai.Component.TxtBox();
@@ -195,6 +195,7 @@
             this.airButton1.TabIndex = 13;
             this.airButton1.Text = "-";
             this.airButton1.Transparent = true;
+            this.airButton1.Click += new System.EventHandler(this.airButton1_Click);
             // 
             // Seller_ID
             // 
@@ -261,7 +262,7 @@
             this.panel10.Controls.Add(this.dataGrBill);
             this.panel10.Location = new System.Drawing.Point(364, 448);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(538, 264);
+            this.panel10.Size = new System.Drawing.Size(562, 264);
             this.panel10.TabIndex = 1;
             // 
             // dataGrBill
@@ -271,13 +272,13 @@
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
             this.dataGrBill.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGrBill.BackgroundColor = System.Drawing.Color.White;
-            this.dataGrBill.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dataGrBill.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dataGrBill.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.DodgerBlue;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DeepSkyBlue;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DodgerBlue;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGrBill.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
@@ -300,48 +301,14 @@
             this.dataGrBill.EnableHeadersVisualStyles = false;
             this.dataGrBill.Location = new System.Drawing.Point(0, 0);
             this.dataGrBill.Name = "dataGrBill";
+            this.dataGrBill.ReadOnly = true;
             this.dataGrBill.RowHeadersVisible = false;
             this.dataGrBill.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            this.dataGrBill.RowTemplate.Height = 24;
+            this.dataGrBill.RowTemplate.Height = 45;
             this.dataGrBill.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGrBill.Size = new System.Drawing.Size(538, 264);
+            this.dataGrBill.Size = new System.Drawing.Size(559, 264);
             this.dataGrBill.TabIndex = 12;
-            this.dataGrBill.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGrBill_CellContentClick);
-            // 
-            // Bill_ID
-            // 
-            this.Bill_ID.HeaderText = "Bill ID";
-            this.Bill_ID.MinimumWidth = 6;
-            this.Bill_ID.Name = "Bill_ID";
-            this.Bill_ID.Width = 125;
-            // 
-            // Customer_name
-            // 
-            this.Customer_name.HeaderText = "Customer Name";
-            this.Customer_name.MinimumWidth = 6;
-            this.Customer_name.Name = "Customer_name";
-            this.Customer_name.Width = 120;
-            // 
-            // Seller_Name
-            // 
-            this.Seller_Name.HeaderText = "Seller Name";
-            this.Seller_Name.MinimumWidth = 6;
-            this.Seller_Name.Name = "Seller_Name";
-            this.Seller_Name.Width = 120;
-            // 
-            // Bill_Date
-            // 
-            this.Bill_Date.HeaderText = "Date";
-            this.Bill_Date.MinimumWidth = 6;
-            this.Bill_Date.Name = "Bill_Date";
-            this.Bill_Date.Width = 120;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.HeaderText = "Total";
-            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.Width = 120;
+            this.dataGrBill.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGrBill_CellContentDoubleClick);
             // 
             // panel5
             // 
@@ -354,9 +321,9 @@
             this.panel5.Controls.Add(this.label10);
             this.panel5.Controls.Add(this.txtTotalPay);
             this.panel5.Controls.Add(this.txtBillID);
-            this.panel5.Location = new System.Drawing.Point(908, 448);
+            this.panel5.Location = new System.Drawing.Point(929, 448);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(280, 262);
+            this.panel5.Size = new System.Drawing.Size(259, 262);
             this.panel5.TabIndex = 1;
             // 
             // btn_createID
@@ -374,7 +341,7 @@
             this.btn_createID.Location = new System.Drawing.Point(10, 153);
             this.btn_createID.Name = "btn_createID";
             this.btn_createID.OverColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.btn_createID.Size = new System.Drawing.Size(113, 42);
+            this.btn_createID.Size = new System.Drawing.Size(109, 42);
             this.btn_createID.TabIndex = 19;
             this.btn_createID.Text = "Create ID";
             this.btn_createID.Click += new ReaLTaiizor.Util.FoxBase.ButtonFoxBase.ClickEventHandler(this.btn_createID_Click);
@@ -394,9 +361,10 @@
             this.btn_prinOrder.Location = new System.Drawing.Point(10, 204);
             this.btn_prinOrder.Name = "btn_prinOrder";
             this.btn_prinOrder.OverColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.btn_prinOrder.Size = new System.Drawing.Size(113, 42);
+            this.btn_prinOrder.Size = new System.Drawing.Size(109, 42);
             this.btn_prinOrder.TabIndex = 19;
             this.btn_prinOrder.Text = "Print";
+            this.btn_prinOrder.Click += new ReaLTaiizor.Util.FoxBase.ButtonFoxBase.ClickEventHandler(this.btn_prinOrder_Click);
             // 
             // panel11
             // 
@@ -408,14 +376,14 @@
             this.panel11.ForeColor = System.Drawing.Color.White;
             this.panel11.Location = new System.Drawing.Point(0, 0);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(280, 49);
+            this.panel11.Size = new System.Drawing.Size(259, 49);
             this.panel11.TabIndex = 18;
             // 
             // dateNow
             // 
             this.dateNow.AutoSize = true;
             this.dateNow.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateNow.Location = new System.Drawing.Point(68, 13);
+            this.dateNow.Location = new System.Drawing.Point(84, 13);
             this.dateNow.Name = "dateNow";
             this.dateNow.Size = new System.Drawing.Size(122, 23);
             this.dateNow.TabIndex = 0;
@@ -425,7 +393,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(7, 13);
+            this.label8.Location = new System.Drawing.Point(23, 13);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(58, 23);
             this.label8.TabIndex = 0;
@@ -456,12 +424,13 @@
             this.foxButton1.EnabledCalc = true;
             this.foxButton1.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.foxButton1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.foxButton1.Location = new System.Drawing.Point(140, 205);
+            this.foxButton1.Location = new System.Drawing.Point(139, 205);
             this.foxButton1.Name = "foxButton1";
             this.foxButton1.OverColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.foxButton1.Size = new System.Drawing.Size(128, 42);
+            this.foxButton1.Size = new System.Drawing.Size(115, 42);
             this.foxButton1.TabIndex = 13;
             this.foxButton1.Text = "Clear";
+            this.foxButton1.Click += new ReaLTaiizor.Util.FoxBase.ButtonFoxBase.ClickEventHandler(this.foxButton1_Click);
             // 
             // btnSaveOder
             // 
@@ -475,10 +444,10 @@
             this.btnSaveOder.EnabledCalc = true;
             this.btnSaveOder.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSaveOder.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnSaveOder.Location = new System.Drawing.Point(140, 153);
+            this.btnSaveOder.Location = new System.Drawing.Point(139, 153);
             this.btnSaveOder.Name = "btnSaveOder";
             this.btnSaveOder.OverColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.btnSaveOder.Size = new System.Drawing.Size(128, 42);
+            this.btnSaveOder.Size = new System.Drawing.Size(115, 42);
             this.btnSaveOder.TabIndex = 13;
             this.btnSaveOder.Text = "Add Ord";
             this.btnSaveOder.Click += new ReaLTaiizor.Util.FoxBase.ButtonFoxBase.ClickEventHandler(this.btnSaveOder_Click);
@@ -500,7 +469,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label10.Location = new System.Drawing.Point(1, 63);
+            this.label10.Location = new System.Drawing.Point(4, 63);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(64, 23);
@@ -575,13 +544,13 @@
             dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
             this.dataGrBilldetail.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGrBilldetail.BackgroundColor = System.Drawing.Color.White;
-            this.dataGrBilldetail.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dataGrBilldetail.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dataGrBilldetail.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.DodgerBlue;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.DeepSkyBlue;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.DodgerBlue;
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGrBilldetail.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
@@ -605,6 +574,7 @@
             this.dataGrBilldetail.EnableHeadersVisualStyles = false;
             this.dataGrBilldetail.Location = new System.Drawing.Point(0, 97);
             this.dataGrBilldetail.Name = "dataGrBilldetail";
+            this.dataGrBilldetail.ReadOnly = true;
             this.dataGrBilldetail.RowHeadersVisible = false;
             this.dataGrBilldetail.RowHeadersWidth = 51;
             this.dataGrBilldetail.RowTemplate.Height = 45;
@@ -612,49 +582,7 @@
             this.dataGrBilldetail.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGrBilldetail.Size = new System.Drawing.Size(828, 343);
             this.dataGrBilldetail.TabIndex = 16;
-            this.dataGrBilldetail.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGrBilldetail_CellContentClick);
-            // 
-            // Product_Id
-            // 
-            this.Product_Id.HeaderText = "Product Id";
-            this.Product_Id.MinimumWidth = 6;
-            this.Product_Id.Name = "Product_Id";
-            this.Product_Id.Width = 146;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "Product Name";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 200;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "Price";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 146;
-            // 
-            // GiamGia
-            // 
-            this.GiamGia.HeaderText = "Giảm Giá";
-            this.GiamGia.MinimumWidth = 6;
-            this.GiamGia.Name = "GiamGia";
-            this.GiamGia.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.HeaderText = "Quantity";
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Width = 95;
-            // 
-            // Total
-            // 
-            this.Total.HeaderText = "Total";
-            this.Total.MinimumWidth = 6;
-            this.Total.Name = "Total";
-            this.Total.Width = 146;
+            this.dataGrBilldetail.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGrBilldetail_CellContentDoubleClick);
             // 
             // panel3
             // 
@@ -688,7 +616,7 @@
             dataGridViewCellStyle8.BackColor = System.Drawing.Color.DodgerBlue;
             dataGridViewCellStyle8.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.DeepSkyBlue;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.DodgerBlue;
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGrProduct.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
@@ -711,6 +639,7 @@
             this.dataGrProduct.EnableHeadersVisualStyles = false;
             this.dataGrProduct.Location = new System.Drawing.Point(0, 0);
             this.dataGrProduct.Name = "dataGrProduct";
+            this.dataGrProduct.ReadOnly = true;
             this.dataGrProduct.RowHeadersVisible = false;
             this.dataGrProduct.RowHeadersWidth = 51;
             this.dataGrProduct.RowTemplate.Height = 45;
@@ -720,46 +649,6 @@
             this.dataGrProduct.Size = new System.Drawing.Size(358, 269);
             this.dataGrProduct.TabIndex = 15;
             this.dataGrProduct.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGrProduct_CellContentClick);
-            // 
-            // ID_Product
-            // 
-            this.ID_Product.HeaderText = "ID";
-            this.ID_Product.MinimumWidth = 6;
-            this.ID_Product.Name = "ID_Product";
-            this.ID_Product.ReadOnly = true;
-            this.ID_Product.Width = 40;
-            // 
-            // Product_name
-            // 
-            this.Product_name.HeaderText = "Product Name";
-            this.Product_name.MinimumWidth = 6;
-            this.Product_name.Name = "Product_name";
-            this.Product_name.ReadOnly = true;
-            this.Product_name.Width = 110;
-            // 
-            // Category_product
-            // 
-            this.Category_product.HeaderText = "Category";
-            this.Category_product.MinimumWidth = 6;
-            this.Category_product.Name = "Category_product";
-            this.Category_product.ReadOnly = true;
-            this.Category_product.Width = 80;
-            // 
-            // Quantity
-            // 
-            this.Quantity.HeaderText = "Quantity";
-            this.Quantity.MinimumWidth = 6;
-            this.Quantity.Name = "Quantity";
-            this.Quantity.ReadOnly = true;
-            this.Quantity.Width = 65;
-            // 
-            // Product_price
-            // 
-            this.Product_price.HeaderText = "Price";
-            this.Product_price.MinimumWidth = 6;
-            this.Product_price.Name = "Product_price";
-            this.Product_price.ReadOnly = true;
-            this.Product_price.Width = 60;
             // 
             // panel6
             // 
@@ -957,6 +846,150 @@
             this.Name_product.TabIndex = 8;
             this.Name_product.Text = "Price";
             // 
+            // Product_Id
+            // 
+            this.Product_Id.HeaderText = "Product Id";
+            this.Product_Id.MinimumWidth = 6;
+            this.Product_Id.Name = "Product_Id";
+            this.Product_Id.ReadOnly = true;
+            this.Product_Id.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Product_Id.Width = 146;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "Product Name";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dataGridViewTextBoxColumn1.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "Price";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dataGridViewTextBoxColumn2.Width = 146;
+            // 
+            // GiamGia
+            // 
+            this.GiamGia.HeaderText = "Giảm Giá";
+            this.GiamGia.MinimumWidth = 6;
+            this.GiamGia.Name = "GiamGia";
+            this.GiamGia.ReadOnly = true;
+            this.GiamGia.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.GiamGia.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.HeaderText = "Quantity";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dataGridViewTextBoxColumn3.Width = 95;
+            // 
+            // Total
+            // 
+            this.Total.HeaderText = "Total";
+            this.Total.MinimumWidth = 6;
+            this.Total.Name = "Total";
+            this.Total.ReadOnly = true;
+            this.Total.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Total.Width = 146;
+            // 
+            // ID_Product
+            // 
+            this.ID_Product.HeaderText = "ID";
+            this.ID_Product.MinimumWidth = 6;
+            this.ID_Product.Name = "ID_Product";
+            this.ID_Product.ReadOnly = true;
+            this.ID_Product.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.ID_Product.Width = 40;
+            // 
+            // Product_name
+            // 
+            this.Product_name.HeaderText = "Product Name";
+            this.Product_name.MinimumWidth = 6;
+            this.Product_name.Name = "Product_name";
+            this.Product_name.ReadOnly = true;
+            this.Product_name.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Product_name.Width = 110;
+            // 
+            // Category_product
+            // 
+            this.Category_product.HeaderText = "Category";
+            this.Category_product.MinimumWidth = 6;
+            this.Category_product.Name = "Category_product";
+            this.Category_product.ReadOnly = true;
+            this.Category_product.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Category_product.Width = 80;
+            // 
+            // Quantity
+            // 
+            this.Quantity.HeaderText = "Quantity";
+            this.Quantity.MinimumWidth = 6;
+            this.Quantity.Name = "Quantity";
+            this.Quantity.ReadOnly = true;
+            this.Quantity.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Quantity.Width = 65;
+            // 
+            // Product_price
+            // 
+            this.Product_price.HeaderText = "Price";
+            this.Product_price.MinimumWidth = 6;
+            this.Product_price.Name = "Product_price";
+            this.Product_price.ReadOnly = true;
+            this.Product_price.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Product_price.Width = 60;
+            // 
+            // Bill_ID
+            // 
+            this.Bill_ID.HeaderText = "Bill ID";
+            this.Bill_ID.MinimumWidth = 6;
+            this.Bill_ID.Name = "Bill_ID";
+            this.Bill_ID.ReadOnly = true;
+            this.Bill_ID.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Bill_ID.Width = 125;
+            // 
+            // Customer_name
+            // 
+            this.Customer_name.HeaderText = "Customer Name";
+            this.Customer_name.MinimumWidth = 6;
+            this.Customer_name.Name = "Customer_name";
+            this.Customer_name.ReadOnly = true;
+            this.Customer_name.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Customer_name.Width = 130;
+            // 
+            // Seller_Name
+            // 
+            this.Seller_Name.HeaderText = "Seller Name";
+            this.Seller_Name.MinimumWidth = 6;
+            this.Seller_Name.Name = "Seller_Name";
+            this.Seller_Name.ReadOnly = true;
+            this.Seller_Name.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Seller_Name.Width = 120;
+            // 
+            // Bill_Date
+            // 
+            this.Bill_Date.HeaderText = "Date";
+            this.Bill_Date.MinimumWidth = 6;
+            this.Bill_Date.Name = "Bill_Date";
+            this.Bill_Date.ReadOnly = true;
+            this.Bill_Date.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Bill_Date.Width = 130;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.HeaderText = "Total";
+            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dataGridViewTextBoxColumn4.Width = 120;
+            // 
             // txtTotalPay
             // 
             this.txtTotalPay.BackColor = System.Drawing.Color.Transparent;
@@ -970,7 +1003,7 @@
             this.txtTotalPay.Margin = new System.Windows.Forms.Padding(4);
             this.txtTotalPay.Name = "txtTotalPay";
             this.txtTotalPay.Padding = new System.Windows.Forms.Padding(6);
-            this.txtTotalPay.Size = new System.Drawing.Size(194, 30);
+            this.txtTotalPay.Size = new System.Drawing.Size(180, 30);
             this.txtTotalPay.TabIndex = 11;
             this.txtTotalPay.UnderLineStyle = true;
             // 
@@ -987,7 +1020,7 @@
             this.txtBillID.Margin = new System.Windows.Forms.Padding(4);
             this.txtBillID.Name = "txtBillID";
             this.txtBillID.Padding = new System.Windows.Forms.Padding(6);
-            this.txtBillID.Size = new System.Drawing.Size(194, 30);
+            this.txtBillID.Size = new System.Drawing.Size(180, 30);
             this.txtBillID.TabIndex = 11;
             this.txtBillID.UnderLineStyle = true;
             // 
@@ -1217,19 +1250,8 @@
         private System.Windows.Forms.DataGridView dataGrBilldetail;
         private System.Windows.Forms.Label label7;
         private Component.TxtBox txtTotalProduct;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Product_Id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn GiamGia;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Total;
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.DataGridView dataGrBill;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Bill_ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Customer_name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Seller_Name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Bill_Date;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
@@ -1251,11 +1273,22 @@
         private System.Windows.Forms.Label Seller_ID;
         private Component.TxtBox txtCategory;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label dateNow;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Product_Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GiamGia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Total;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID_Product;
         private System.Windows.Forms.DataGridViewTextBoxColumn Product_name;
         private System.Windows.Forms.DataGridViewTextBoxColumn Category_product;
         private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
         private System.Windows.Forms.DataGridViewTextBoxColumn Product_price;
-        private System.Windows.Forms.Label dateNow;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Bill_ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Customer_name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Seller_Name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Bill_Date;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
     }
 }

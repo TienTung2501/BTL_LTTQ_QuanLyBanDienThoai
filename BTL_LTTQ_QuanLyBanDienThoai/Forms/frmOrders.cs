@@ -1,9 +1,15 @@
 ﻿using BTL_LTTQ_QuanLyBanDienThoai.Classes;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
 using System.IO;
+using System.Runtime.InteropServices.ComTypes;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using Excel = Microsoft.Office.Interop.Excel;
+
+
 
 namespace BTL_LTTQ_QuanLyBanDienThoai
 {
@@ -195,13 +201,13 @@ namespace BTL_LTTQ_QuanLyBanDienThoai
                                     if (result == DialogResult.OK)
                                     {
                                         pushToBill(productFound);
-                                    updateSoluongDataGrProduct(delta, productCurrentID, numOnBill);
-                                    updatetotal();
+                                        updateSoluongDataGrProduct(delta, productCurrentID, numOnBill);
+                                        updatetotal();
                                     }
                                 }
                                 else
                                 {
-                                    MessageBox.Show("Không còn sản phẩm 1");
+                                    MessageBox.Show("Đã hết sản phẩm");
                                 }
                                 break;
                             }
@@ -218,7 +224,7 @@ namespace BTL_LTTQ_QuanLyBanDienThoai
                         }
                         else
                         {
-                            MessageBox.Show("Không còn sản phẩm 2");
+                            MessageBox.Show("Đã hết sản phẩm");
                         }
                     }
                 }
@@ -232,7 +238,7 @@ namespace BTL_LTTQ_QuanLyBanDienThoai
                     }
                     else
                     {
-                        MessageBox.Show("Không còn sản phẩm 3");
+                        MessageBox.Show("Đã hết sản phẩm");
                     }
                 }
             }
@@ -347,29 +353,11 @@ namespace BTL_LTTQ_QuanLyBanDienThoai
                 btn_createID.Enabled = false;
             }
         }
-        public void updatetotal()
-        {
-            int total = 0;
-            if (dataGrBilldetail.Rows.Count > 0)
-            {
-                foreach (DataGridViewRow row in dataGrBilldetail.Rows)
-                {
-                    if (row.Cells[5].Value != null)
-                    {
-                        int cellValue;
-                        if (int.TryParse(row.Cells[5].Value.ToString(), out cellValue))
-                        {
-                            total += cellValue;
-                        }
-                        txtTotalPay.CustomText = total.ToString();
-                    }
-                }
-            }
-        }
+       
         public void showDataBill()
         {
             dataGrBill.Rows.Clear();
-            string select = "select tblBill.id as id, tblCustomer.name as customerName,tblSeller.name as sellerName,tblBill.date as date,tblBill.total as total from tblBill inner join tblCustomer on tblBill.customer_id=tblCustomer.id inner join tblSeller on tblSeller.id=tblBill.seller_id";
+            string select = "select tblBill.id as id, tblCustomer.name as customerName,tblSeller.name as sellerName,tblBill.date as date,tblBill.total as total from tblBill inner join tblCustomer on tblBill.customer_id=tblCustomer.id inner join tblSeller on tblSeller.id=tblBill.seller_id ORDER BY id ASC";
             DataTable dt = process.DataReader(select);
             foreach (DataRow row in dt.Rows)
             {
@@ -387,6 +375,10 @@ namespace BTL_LTTQ_QuanLyBanDienThoai
             if (txtCustomerName.CustomText == "" || txtCustomerPhone.CustomText == "" || txtCustomerAddress.CustomText == "") { 
                 MessageBox.Show("Bạn cần nhập đầy đủ thông tin bao gồm thông tin khách hàng và hàng cần mua");
             }
+            else if (CheckValidPhone(txtCustomerPhone.CustomText) == -1)
+            {
+                MessageBox.Show("Bạn cần nhập đúng định dạng số điện thoại. Số điện thoại hợp lệ phải bắt đầu là 03 hoặc 09 và có chiều dài 10");
+            }
             else if (dataGrBilldetail.Rows.Count == 1)
             {
                 MessageBox.Show("Nhập mặt hàng trước khi tạo hóa đơn");
@@ -403,6 +395,7 @@ namespace BTL_LTTQ_QuanLyBanDienThoai
                 {
                     updateBill();
                     isUpdateBill=false;
+                    btn_createID.Enabled = true;
                 }
                 else
                 {
@@ -468,6 +461,18 @@ namespace BTL_LTTQ_QuanLyBanDienThoai
             clearCustomerInfor();
             showDataBill();
         }
+        public int CheckValidPhone(string phoneNumber)
+        {
+            string pattern = @"^(03|09)\d{8}$";
+            if (Regex.IsMatch(phoneNumber, pattern))
+            {
+                return 1;
+            }
+            else
+            {
+                return -1;
+            }
+        }
         public void clearCustomerInfor()
         {
             txtCustomerName.CustomText = "";
@@ -478,29 +483,9 @@ namespace BTL_LTTQ_QuanLyBanDienThoai
             dataGrBilldetail.Rows.Clear();
         }
 
-        private void dataGrBill_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            dataGrBilldetail.Rows.Clear();
-            int rowindex = e.RowIndex;
-            string billId = dataGrBill.Rows[rowindex].Cells[0].Value.ToString();
-            /*DataTable datauser = process.DataReader("select tblBill.id as id tblCustomer.id as customer_id, tblCustomer.name as name,tblCustomer.phone as phone,tblCustomer.address as address from tblBill inner join tblCustomer on tblBill.customer_id=tblCustomer.id where tblBill.id=" + billId + "");*/
-            DataTable datauser = process.DataReader("SELECT tblBill.id AS id, tblCustomer.id AS customer_id, tblCustomer.name AS name, tblCustomer.phone AS phone, tblCustomer.address AS address FROM tblBill INNER JOIN tblCustomer ON tblBill.customer_id = tblCustomer.id WHERE tblBill.id ='"+ billId + "'");
-
-            if (datauser.Rows.Count > 0 )
-            {
-                txtCustomerName.CustomText = datauser.Rows[0]["name"].ToString();
-                txtCustomerPhone.CustomText = datauser.Rows[0]["phone"].ToString();
-                txtCustomerAddress.CustomText = datauser.Rows[0]["address"].ToString();
-            }
-            txtBillID.CustomText = billId;
-            string select = "SELECT tblProduct.id as id,tblProduct.name as name,tblBillDetail.quantity as quantity,tblBillDetail.discount discount,tblProduct.price as price,total from tblBillDetail inner join tblProduct on tblProduct.id=tblBillDetail.product_id where tblBillDetail.bill_id='" + billId+"'";
-            showDataBillDetail(select);
-            txtTotalPay.CustomText= dataGrBill.Rows[rowindex].Cells[4].Value.ToString();
-            btn_createID.Enabled = false;
-            isUpdateBill = true;
-        }
         public void updateBill()
         {
+            
             string upadteBill = "update tblBill set seller_id='" + sellerId + "',date='" + DateTime.Now.ToString() + "',total='" + int.Parse(txtTotalPay.CustomText) + "'where id='"+txtBillID.CustomText+"'";
             process.DataChange(upadteBill);
             if(dataGrBilldetail.Rows.Count > 0 )
@@ -514,10 +499,12 @@ namespace BTL_LTTQ_QuanLyBanDienThoai
                         int quantitydetail = int.Parse(row.Cells[4].Value.ToString());
                         int totalbilldetail = int.Parse(row.Cells[5].Value.ToString());
                         DataTable checkOnBill = process.DataReader("Select * from tblBillDetail where product_id='" + product_id + "'and bill_id='" + txtBillID.CustomText + "'");
-                        if(checkOnBill.Rows.Count >0 )
+                        if (checkOnBill.Rows.Count > 0)
                         {
-                        string updateDetailBill = "update tblBillDetail set quantity='" + quantitydetail + "',discount='" + discountdetail + "',total='" + totalbilldetail + "'where product_id='"+product_id+"'and bill_id='"+txtBillID.CustomText+"'";
-                        process.DataChange(updateDetailBill);
+                            string updateDetailBill = "update tblBillDetail set quantity='" + quantitydetail + "',discount='" + discountdetail + "',total='" + totalbilldetail + "'where product_id='" + product_id + "'and bill_id='" + txtBillID.CustomText + "'";
+                            process.DataChange(updateDetailBill);
+                            string deleteDataBill= "Delete from tblBillDetail where product_id !='" + product_id + "'and bill_id='" + txtBillID.CustomText + "'";
+                            process.DataChange(deleteDataBill);
 
                         }
                         else
@@ -525,7 +512,7 @@ namespace BTL_LTTQ_QuanLyBanDienThoai
                             string addBillDetail = "insert into tblBillDetail (bill_id,product_id,quantity,discount,total) values('" + txtBillID.CustomText + "','" + product_id + "','" + quantitydetail + "','" + discountdetail + "','" + totalbilldetail + "')";
                             process.DataChange(addBillDetail);
                         }
-                    }
+                    } 
                 }
             }
             updateQuantityToDatabase();
@@ -534,12 +521,13 @@ namespace BTL_LTTQ_QuanLyBanDienThoai
             showDataBill();
             MessageBox.Show("Lưu hóa đơn thành công");
         }
-        private void dataGrBilldetail_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGrBilldetail_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             int rowindex = e.RowIndex;
             int productID = int.Parse(dataGrBilldetail.Rows[rowindex].Cells[0].Value.ToString());
             int quantity = int.Parse(dataGrBilldetail.Rows[rowindex].Cells[4].Value.ToString());
             dataGrBilldetail.Rows.RemoveAt(rowindex);
+            updatetotal();
             foreach (DataGridViewRow row in dataGrProduct.Rows)
             {
                 if (row.Cells[0].Value != null)
@@ -550,7 +538,163 @@ namespace BTL_LTTQ_QuanLyBanDienThoai
                     }
                 }
             }
-            updatetotal();
+        }
+        public void updatetotal()
+        {
+            int total = 0;
+            if (dataGrBilldetail.Rows.Count > 0)
+            {
+                foreach (DataGridViewRow row in dataGrBilldetail.Rows)
+                {
+                    if (row.Cells[5].Value != null)
+                    {
+                        int cellValue;
+                        if (int.TryParse(row.Cells[5].Value.ToString(), out cellValue))
+                        {
+                            total += cellValue;
+                        }
+                    }
+                }
+                txtTotalPay.CustomText = total.ToString();
+            }
+        }
+
+
+        private void dataGrBill_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            dataGrBilldetail.Rows.Clear();
+            int rowindex = e.RowIndex;
+            string billId = dataGrBill.Rows[rowindex].Cells[0].Value.ToString();
+            /*DataTable datauser = process.DataReader("select tblBill.id as id tblCustomer.id as customer_id, tblCustomer.name as name,tblCustomer.phone as phone,tblCustomer.address as address from tblBill inner join tblCustomer on tblBill.customer_id=tblCustomer.id where tblBill.id=" + billId + "");*/
+            DataTable datauser = process.DataReader("SELECT tblBill.id AS id, tblCustomer.id AS customer_id, tblCustomer.name AS name, tblCustomer.phone AS phone, tblCustomer.address AS address FROM tblBill INNER JOIN tblCustomer ON tblBill.customer_id = tblCustomer.id WHERE tblBill.id ='" + billId + "'");
+
+            if (datauser.Rows.Count > 0)
+            {
+                txtCustomerName.CustomText = datauser.Rows[0]["name"].ToString();
+                txtCustomerPhone.CustomText = datauser.Rows[0]["phone"].ToString();
+                txtCustomerAddress.CustomText = datauser.Rows[0]["address"].ToString();
+            }
+            txtBillID.CustomText = billId;
+            string select = "SELECT tblProduct.id as id,tblProduct.name as name,tblBillDetail.quantity as quantity,tblBillDetail.discount discount,tblProduct.price as price,total from tblBillDetail inner join tblProduct on tblProduct.id=tblBillDetail.product_id where tblBillDetail.bill_id='" + billId + "'ORDER BY id ASC";
+            showDataBillDetail(select);
+            txtTotalPay.CustomText = dataGrBill.Rows[rowindex].Cells[4].Value.ToString();
+            btn_createID.Enabled = false;
+            isUpdateBill = true;
+        }
+
+        private void foxButton1_Click(object sender, EventArgs e)
+        {
+            if (isUpdateBill==false)
+            {
+                if (dataGrBilldetail.Rows.Count > 0)
+                {
+
+                    foreach (DataGridViewRow row in dataGrBilldetail.Rows)
+                    {
+                        if (row.Cells[0].Value != null)
+                        {
+                            int productID = int.Parse(row.Cells[0].Value.ToString());
+                            int quantity = int.Parse(row.Cells[4].Value.ToString());
+                            foreach (DataGridViewRow row2 in dataGrProduct.Rows)
+                            {
+                                if (row2.Cells[0].Value != null)
+                                {
+                                    if (int.Parse(row2.Cells[0].Value.ToString()) == productID)
+                                    {
+                                        row2.Cells[3].Value = int.Parse(row2.Cells[3].Value.ToString()) + quantity;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            dataGrBilldetail.Rows.Clear();
+            txtBillID.CustomText = "";
+            btn_createID.Enabled=true;
+            isUpdateBill = false;
+            clearCustomerInfor();
+            clearDataProduct();
+        }
+
+        private void btn_prinOrder_Click(object sender, EventArgs e)
+        {
+            Excel.Application exApp = new Excel.Application();// ứng dụng
+            Excel.Workbook exWorkbook = exApp.Workbooks.Add(Excel.XlWBATemplate.xlWBATWorksheet);// file excel
+            Excel.Worksheet exSheet = (Excel.Worksheet)exWorkbook.Worksheets[1];//1 trang tính
+            Excel.Range exRange = (Excel.Range)exSheet.Cells[1, 1];// đưa con trỏ vào ô a[1,1]//1 ô
+            exRange.Font.Size = 15;
+            exRange.Font.Bold = true;
+            exRange.Font.Color = Color.Blue;
+            exRange.Value = "Mobile Center";
+            Excel.Range diachi = (Excel.Range)exSheet.Cells[2, 1];// đưa con trỏ vào ô a[1,1]
+            diachi.Font.Size = 15;
+            diachi.Font.Bold = true;
+            diachi.Font.Color = Color.Blue;
+            diachi.Value = "Ha Noi, Cau Giay, Dong Da";
+
+            // in hóa đơn bán:
+            exSheet.Range["D4"].Font.Size = 20;// đưa con trỏ vào ô a[1,1]
+            exSheet.Range["D4"].Font.Size = 13;
+            exSheet.Range["D4"].Font.Bold = true;
+            exSheet.Range["D4"].Font.Color = Color.Red;
+            exSheet.Range["D4"].Value = "Bill Of Product";
+            exSheet.Range["D4"].ColumnWidth = 20;
+            exSheet.Range["A5:A8"].Font.Size = 12;// đưa con trỏ vào ô a[1,1]
+            exSheet.Range["A5"].Value = "Bill ID: " + txtBillID.CustomText;// đưa con trỏ vào ô a[1,1]
+            exSheet.Range["A6"].Value = "Customer Name: " + txtCustomerName.CustomText;// đưa con trỏ vào ô a[1,1]
+            exSheet.Range["A7"].Value = "Address: " + txtCustomerAddress.CustomText;// đưa con trỏ vào ô a[1,1]
+            exSheet.Range["A8"].Value = "Phone: " + txtCustomerPhone.CustomText;// đưa con trỏ vào ô a[1,1]
+            exSheet.Range["A10:G10"].Font.Size = 12;// đưa con trỏ vào ô a[1,1]
+            exSheet.Range["A10:G10"].Font.Bold = true;// đưa con trỏ vào ô a[1,1]
+            exSheet.Range["C10"].ColumnWidth = 20;
+            exSheet.Range["G10"].ColumnWidth = 20;
+            exSheet.Range["E10"].ColumnWidth = 20;
+            exSheet.Range["A10"].Value = "STT";// đưa con trỏ vào ô a[1,1]
+            exSheet.Range["B10"].Value = "Product_id";// đưa con trỏ vào ô a[1,1]
+            exSheet.Range["C10"].Value = "Name Product";// đưa con trỏ vào ô a[1,1]
+            exSheet.Range["D10"].Value = "Quantity";// đưa con trỏ vào ô a[1,1]
+            exSheet.Range["E10"].Value = "Price";// đưa con trỏ vào ô a[1,1]
+            exSheet.Range["F10"].Value = "Discount";// đưa con trỏ vào ô a[1,1]
+            exSheet.Range["F10"].ColumnWidth = 20;// đưa con trỏ vào ô a[1,1]
+            exSheet.Range["G10"].Value = "Total";// đưa con trỏ vào ô a[1,1]
+            int dong = 11;
+            //in danh sách các chi tiết sản phẩm 
+            for (var i = 0; i < dataGrBilldetail.Rows.Count - 1; i++)
+            {
+                exSheet.Range["A" + (dong + i).ToString()].Value = (i + 1).ToString();// bắt đầu in data vào excel từ dòng thứ dòng +i và số thứ tự vì i chạy từ 0 nên phải cộng thêm 1
+                exSheet.Range["B" + (dong + i).ToString()].Value = dataGrBilldetail.Rows[i].Cells[0].Value.ToString();
+                exSheet.Range["C" + (dong + i).ToString()].Value = dataGrBilldetail.Rows[i].Cells[1].Value.ToString();
+                exSheet.Range["D" + (dong + i).ToString()].Value = dataGrBilldetail.Rows[i].Cells[2].Value.ToString();
+                exSheet.Range["E" + (dong + i).ToString()].Value = dataGrBilldetail.Rows[i].Cells[3].Value.ToString();
+                exSheet.Range["F" + (dong + i).ToString()].Value = dataGrBilldetail.Rows[i].Cells[4].Value.ToString() + " %";
+                exSheet.Range["G" + (dong + i).ToString()].Value = dataGrBilldetail.Rows[i].Cells[5].Value.ToString() + " $";
+            }
+            dong = dong + dataGrBilldetail.Rows.Count;
+            exSheet.Range["F" + dong.ToString()].Value ="Total Pay:"+ txtTotalPay.CustomText + " $";
+            exSheet.Name = txtBillID.CustomText;
+            exWorkbook.Activate();// kích hoạt cho file excel hoạt động
+            // luu file
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Excel 365 .xls|*.xls|Excel 365 .xlsx|*.xlsx|All Files|*.*";
+            saveFileDialog.FilterIndex = 2;
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                exWorkbook.SaveAs(saveFileDialog.FileName.ToLower());// save file 
+                MessageBox.Show("In thành công");
+            }
+            exApp.Quit();
+
+
+
+
+
+
+        }
+
+        private void airButton1_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }
