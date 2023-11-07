@@ -17,16 +17,18 @@ namespace BTL_LTTQ_QuanLyBanDienThoai
     {
         private bool ignoreTextChange = false;
         MainForm mainForm = new MainForm();
-        DataBaseProcess process=new DataBaseProcess();
+        DataBaseProcess process = new DataBaseProcess();
         private int sellerId;
         private string sellerName;
+        private int productCurrentID;
+      /*  private bool totalProduct = false;*/
         public frmOrders()
         {
             InitializeComponent();
-            DataTable dt = process.DataReader("Select id,name from tblSeller where id="+Classes.Constants.userId+"");
-            if(dt.Rows.Count > 0)
+            DataTable dt = process.DataReader("Select id,name from tblSeller where id=" + Classes.Constants.userId + "");
+            if (dt.Rows.Count > 0)
             {
-                this.sellerId =(int) dt.Rows[0]["id"];
+                this.sellerId = (int)dt.Rows[0]["id"];
                 this.sellerName = dt.Rows[0]["name"].ToString();
             }
 
@@ -56,10 +58,10 @@ namespace BTL_LTTQ_QuanLyBanDienThoai
             );
             }
         }
-        
+
         private void btn_backtoHome_Click(object sender, EventArgs e)
         {
-            
+
             this.Hide();
             mainForm.ShowDialog();
         }
@@ -71,21 +73,20 @@ namespace BTL_LTTQ_QuanLyBanDienThoai
 
         private void dataGrProduct_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            string fileAnh="";
-            int rowindex=e.RowIndex;
-            int productId =int.Parse(dataGrProduct.Rows[rowindex].Cells[0].Value.ToString());
+            string fileAnh = "";
+            int rowindex = e.RowIndex;
+            productCurrentID = int.Parse(dataGrProduct.Rows[rowindex].Cells[0].Value.ToString());
             txtProductName.CustomText = dataGrProduct.Rows[rowindex].Cells[1].Value.ToString();
-            txtCategory.CustomText= dataGrProduct.Rows[rowindex].Cells[2].Value.ToString();
-            txtProductPrice.CustomText= dataGrProduct.Rows[rowindex].Cells[4].Value.ToString();
+            txtCategory.CustomText = dataGrProduct.Rows[rowindex].Cells[2].Value.ToString();
+            txtProductPrice.CustomText = dataGrProduct.Rows[rowindex].Cells[4].Value.ToString();
             string debugFolder = AppDomain.CurrentDomain.BaseDirectory;
-            totalProduct();
-            DataTable dt = process.DataReader("Select image from tblProduct where id="+productId+"");
+            DataTable dt = process.DataReader("Select image from tblProduct where id=" + productCurrentID + "");
             if (dt != null)
             {
-             fileAnh = dt.Rows[0]["image"].ToString();
+                fileAnh = dt.Rows[0]["image"].ToString();
             }
             // Tên tệp tin ảnh trong thư mục "images" (thay bằng tên tệp tin thực tế)
-            string imageName = "images/"+fileAnh+"";
+            string imageName = "images/" + fileAnh + "";
 
             // Tạo đường dẫn đầy đủ tới tệp tin ảnh
             string imagePath = Path.Combine(debugFolder, imageName);
@@ -101,21 +102,54 @@ namespace BTL_LTTQ_QuanLyBanDienThoai
                 // Xử lý trường hợp không tìm thấy tệp tin ảnh
                 MessageBox.Show("Không tìm thấy tệp tin ảnh.");
             }
+            totalProduct();
 
 
         }
 
-            
+
         public void totalProduct()
         {
-            if(txtDiscount.CustomText.Trim()!=""&& txtProductQuantity.CustomText.Trim() != "")
+            int price = 0;
+            int discount = 0;
+            int quantity = 0;
+
+            if (txtProductQuantity.CustomText != "" && txtDiscount.CustomText != "")
             {
-                int price = int.Parse(txtProductPrice.CustomText);
-                int discount = int.Parse(txtDiscount.CustomText);
-                int quantity = int.Parse(txtProductQuantity.CustomText);
-                txtTotalProduct.CustomText = ((int)(quantity * (100 - discount) * price / 100)).ToString();
+                if (int.TryParse(txtProductQuantity.CustomText, out quantity) &&
+                    int.TryParse(txtDiscount.CustomText, out discount))
+                {
+                    if (txtProductPrice.CustomText.Trim() != "" &&
+                        int.TryParse(txtProductPrice.CustomText, out price))
+                    {
+                        txtTotalProduct.CustomText = ((int)(quantity * (100 - discount) * price / 100)).ToString();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Bạn cần chọn sản phẩm");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Bạn cần nhập số lượng và giảm giá là số nguyên");
+                }
             }
-               
+        }
+
+        private void txtProductQuantity_TxtBoxTextChanged(object sender, EventArgs e)
+        {
+            if (!ignoreTextChange)
+            {
+                totalProduct();
+            }
+        }
+
+        private void txtDiscount_TxtBoxTextChanged(object sender, EventArgs e)
+        {
+            if (!ignoreTextChange)
+            {
+                totalProduct();
+            }
         }
 
         public void clearDataProduct()
@@ -136,91 +170,109 @@ namespace BTL_LTTQ_QuanLyBanDienThoai
             clearDataProduct();
         }
 
-        private void txtProductQuantity_TxtBoxTextChanged(object sender, EventArgs e)
-        {
-            if (!ignoreTextChange)
-            {
 
-                if (txtDiscount.CustomText.Trim()!="")
-            {
-                if (txtProductName.CustomText.Trim() == "" || txtProductPrice.CustomText.Trim() == "" || txtCategory.CustomText.Trim() == "")
-                {
-                    MessageBox.Show("Bạn cần chọn sản phẩm");
-                }
-                else if (!int.TryParse(txtProductQuantity.CustomText.Trim(), out int quantity))
-                {
-                    MessageBox.Show("Bạn cần nhập đúng định số lượng");
-                    txtProductQuantity.Focus();
-                }
-                else
-                {
-                    totalProduct();
-                }
-
-            }
-            }  
-
-        }
-
-        private void txtDiscount_TxtBoxTextChanged(object sender, EventArgs e)
-        {
-            if (!ignoreTextChange)
-            {
-
-                if (txtProductQuantity.CustomText.Trim() != "")
-            {
-                if (txtProductName.CustomText.Trim() == "" || txtProductPrice.CustomText.Trim() == "" || txtCategory.CustomText.Trim() == "")
-                {
-                    MessageBox.Show("Bạn cần chọn sản phẩm");
-                }
-                else if (!int.TryParse(txtDiscount.CustomText.Trim(), out int discount))
-                {
-                    MessageBox.Show("Bạn cần nhập đúng định dạng giảm giá");
-                    txtDiscount.Focus();
-                }
-                else
-                {
-                    totalProduct();
-                }
-            }
-            }
-        }
 
         private void btn_AddProduct_Click(object sender, EventArgs e)
         {
-            if(txtProductName.CustomText.Trim() == "" || txtProductPrice.CustomText.Trim() == "" || txtCategory.CustomText.Trim() == "" || txtProductQuantity.CustomText == "" || txtDiscount.CustomText == "")
+            if (txtProductName.CustomText.Trim() == "" || txtProductPrice.CustomText.Trim() == "" || txtCategory.CustomText.Trim() == "" || txtProductQuantity.CustomText == "" || txtDiscount.CustomText == "")
             {
                 MessageBox.Show("Bạn cần nhập đầy đủ thông tin sản phẩm");
             }
-/*            else
+            else
             {
-                int delta=int.Parse(txtProductQuantity.CustomText);
-                
-
-                updateSoluong();
-            }*/
-        }
-        
-        public void updateSoluong(int delta,int ProductId,int numOnBill)
-        {
-            
-            foreach (DataGridViewRow row in dataGrProduct.Rows)
-            {
-                if (int.Parse(row.Cells[0].Value.ToString()) == ProductId)
+                int delta = int.Parse(txtProductQuantity.CustomText);
+                if (dataGrBilldetail.Rows.Count == 0)
                 {
-                    if (int.Parse(row.Cells[3].Value.ToString())+ numOnBill <= delta)
+                    if (checkSoLuong(delta, productCurrentID, 0))
                     {
-                        string query = "update tblProduct set quantity=" + delta + "";
-                        process.DataChange(query);
-                        showProduct();
+                        updateSoluong(delta, productCurrentID, 0);
+                        showDataBillDetail();
                     }
                     else
+                        MessageBox.Show("Không còn sản phẩm");
+
+                }
+                else
+                {
+
+                foreach( DataGridViewRow row in dataGrBilldetail.Rows)
                     {
-                        MessageBox.Show("Sản phẩm hiện tại đã hết vui lòng chọn sản phẩm khác");
+                        if (int.Parse(row.Cells[0].Value.ToString()) == productCurrentID)
+                        {
+                            int numOnBill = int.Parse(row.Cells[4].Value.ToString());
+                            if (checkSoLuong(delta, productCurrentID, numOnBill))
+                            {
+                                updateSoluong(delta, productCurrentID, numOnBill);
+                                showDataBillDetail();
+                            }  
+                            else
+                                MessageBox.Show("Không còn sản phẩm");
+                        }
                     }
                 }
             }
-           
+        }
+
+        public void showDataBillDetail()
+        {
+            dataGrBilldetail.Rows.Clear();
+            DataTable dt = process.DataReader("Select * from tblBillDetail");
+
+            foreach (DataRow row in dt.Rows)
+            {
+                dataGrBilldetail.Rows.Add(
+                    row["product_id"],
+                    txtProductName.CustomText,
+                    int.Parse(txtProductPrice.CustomText),
+                    row["quantity"].ToString(),
+                    row["price"].ToString(),
+                    row["total"].ToString()
+                );
+            }
+        }
+
+        public bool checkSoLuong(int delta, int ProductId, int numOnBill)
+        {
+            foreach (DataGridViewRow row in dataGrProduct.Rows)
+            {
+                if (row.Cells[0].Value != null)
+                {
+                    if (int.Parse(row.Cells[0].Value.ToString()) == ProductId)
+                    {
+                        if (int.Parse(row.Cells[3].Value.ToString()) + numOnBill <= delta)
+                        {
+                            return true;
+                        }
+                    }
+                }
+            }
+
+            return false;
+        }
+
+        public void updateSoluong(int delta, int ProductId, int numOnBill)
+        {
+                string query = "update tblProduct set quantity=" + delta + " WHERE id = " + ProductId;
+                process.DataChange(query);
+                showProduct();
+        }
+
+        private void btn_createID_Click(object sender, EventArgs e)
+        {
+            if (txtBillID.CustomText.Trim() == "")
+            {
+                string BillID = "Bill_";
+                DateTime dt = DateTime.Now;
+                int day = dt.Day;
+                int month = dt.Month;
+                int year = dt.Year;
+                int hour = dt.Hour;
+                int minute = dt.Minute;
+                int second = dt.Second;
+                BillID += day.ToString() + month.ToString() + year.ToString() + "_" + hour.ToString() + minute.ToString() + second.ToString();
+                txtBillID.CustomText = BillID;
+
+            }
         }
     }
 }

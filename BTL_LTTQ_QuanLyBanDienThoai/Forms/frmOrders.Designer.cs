@@ -65,13 +65,8 @@
             this.btnSaveOder = new ReaLTaiizor.Controls.FoxButton();
             this.label13 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.txtTotalPay = new BTL_LTTQ_QuanLyBanDienThoai.Component.TxtBox();
-            this.txtBillID = new BTL_LTTQ_QuanLyBanDienThoai.Component.TxtBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.txtCustomerAddress = new BTL_LTTQ_QuanLyBanDienThoai.Component.TxtBox();
-            this.txtCustomerPhone = new BTL_LTTQ_QuanLyBanDienThoai.Component.TxtBox();
-            this.txtCustomerName = new BTL_LTTQ_QuanLyBanDienThoai.Component.TxtBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
@@ -91,17 +86,11 @@
             this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Product_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.txtCategory = new BTL_LTTQ_QuanLyBanDienThoai.Component.TxtBox();
-            this.txtProductPrice = new BTL_LTTQ_QuanLyBanDienThoai.Component.TxtBox();
-            this.txtProductName = new BTL_LTTQ_QuanLyBanDienThoai.Component.TxtBox();
             this.btn_Clear = new ReaLTaiizor.Controls.FoxButton();
             this.btn_AddProduct = new ReaLTaiizor.Controls.FoxButton();
             this.pictureProduct = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtTotalProduct = new BTL_LTTQ_QuanLyBanDienThoai.Component.TxtBox();
-            this.txtDiscount = new BTL_LTTQ_QuanLyBanDienThoai.Component.TxtBox();
-            this.txtProductQuantity = new BTL_LTTQ_QuanLyBanDienThoai.Component.TxtBox();
             this.panel8 = new System.Windows.Forms.Panel();
             this.Product_order = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -110,6 +99,17 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.Name_product = new System.Windows.Forms.Label();
+            this.txtTotalPay = new BTL_LTTQ_QuanLyBanDienThoai.Component.TxtBox();
+            this.txtBillID = new BTL_LTTQ_QuanLyBanDienThoai.Component.TxtBox();
+            this.txtCustomerAddress = new BTL_LTTQ_QuanLyBanDienThoai.Component.TxtBox();
+            this.txtCustomerPhone = new BTL_LTTQ_QuanLyBanDienThoai.Component.TxtBox();
+            this.txtCustomerName = new BTL_LTTQ_QuanLyBanDienThoai.Component.TxtBox();
+            this.txtCategory = new BTL_LTTQ_QuanLyBanDienThoai.Component.TxtBox();
+            this.txtProductPrice = new BTL_LTTQ_QuanLyBanDienThoai.Component.TxtBox();
+            this.txtProductName = new BTL_LTTQ_QuanLyBanDienThoai.Component.TxtBox();
+            this.txtTotalProduct = new BTL_LTTQ_QuanLyBanDienThoai.Component.TxtBox();
+            this.txtDiscount = new BTL_LTTQ_QuanLyBanDienThoai.Component.TxtBox();
+            this.txtProductQuantity = new BTL_LTTQ_QuanLyBanDienThoai.Component.TxtBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -370,12 +370,13 @@
             this.btn_createID.EnabledCalc = true;
             this.btn_createID.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_createID.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btn_createID.Location = new System.Drawing.Point(10, 129);
+            this.btn_createID.Location = new System.Drawing.Point(10, 153);
             this.btn_createID.Name = "btn_createID";
             this.btn_createID.OverColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.btn_createID.Size = new System.Drawing.Size(113, 42);
             this.btn_createID.TabIndex = 19;
             this.btn_createID.Text = "Create ID";
+            this.btn_createID.Click += new ReaLTaiizor.Util.FoxBase.ButtonFoxBase.ClickEventHandler(this.btn_createID_Click);
             // 
             // btn_prinOrder
             // 
@@ -389,7 +390,7 @@
             this.btn_prinOrder.EnabledCalc = true;
             this.btn_prinOrder.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_prinOrder.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btn_prinOrder.Location = new System.Drawing.Point(10, 202);
+            this.btn_prinOrder.Location = new System.Drawing.Point(10, 204);
             this.btn_prinOrder.Name = "btn_prinOrder";
             this.btn_prinOrder.OverColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.btn_prinOrder.Size = new System.Drawing.Size(113, 42);
@@ -453,7 +454,7 @@
             this.foxButton1.EnabledCalc = true;
             this.foxButton1.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.foxButton1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.foxButton1.Location = new System.Drawing.Point(140, 202);
+            this.foxButton1.Location = new System.Drawing.Point(140, 205);
             this.foxButton1.Name = "foxButton1";
             this.foxButton1.OverColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.foxButton1.Size = new System.Drawing.Size(128, 42);
@@ -472,7 +473,7 @@
             this.btnSaveOder.EnabledCalc = true;
             this.btnSaveOder.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSaveOder.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnSaveOder.Location = new System.Drawing.Point(140, 129);
+            this.btnSaveOder.Location = new System.Drawing.Point(140, 153);
             this.btnSaveOder.Name = "btnSaveOder";
             this.btnSaveOder.OverColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.btnSaveOder.Size = new System.Drawing.Size(128, 42);
@@ -484,58 +485,24 @@
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label13.Location = new System.Drawing.Point(136, 54);
+            this.label13.Location = new System.Drawing.Point(6, 108);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(99, 23);
+            this.label13.Size = new System.Drawing.Size(49, 23);
             this.label13.TabIndex = 8;
-            this.label13.Text = "Total-Pay:";
+            this.label13.Text = "Pay:";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label10.Location = new System.Drawing.Point(6, 54);
+            this.label10.Location = new System.Drawing.Point(1, 63);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(64, 23);
             this.label10.TabIndex = 8;
             this.label10.Text = "Bill ID";
-            // 
-            // txtTotalPay
-            // 
-            this.txtTotalPay.BackColor = System.Drawing.Color.Transparent;
-            this.txtTotalPay.BorderColor1 = System.Drawing.Color.DeepSkyBlue;
-            this.txtTotalPay.BorderSize1 = 2;
-            this.txtTotalPay.CustomText = "";
-            this.txtTotalPay.Enabled = false;
-            this.txtTotalPay.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotalPay.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.txtTotalPay.Location = new System.Drawing.Point(136, 81);
-            this.txtTotalPay.Margin = new System.Windows.Forms.Padding(4);
-            this.txtTotalPay.Name = "txtTotalPay";
-            this.txtTotalPay.Padding = new System.Windows.Forms.Padding(6);
-            this.txtTotalPay.Size = new System.Drawing.Size(132, 30);
-            this.txtTotalPay.TabIndex = 11;
-            this.txtTotalPay.UnderLineStyle = true;
-            // 
-            // txtBillID
-            // 
-            this.txtBillID.BackColor = System.Drawing.Color.Transparent;
-            this.txtBillID.BorderColor1 = System.Drawing.Color.DeepSkyBlue;
-            this.txtBillID.BorderSize1 = 2;
-            this.txtBillID.CustomText = "";
-            this.txtBillID.Enabled = false;
-            this.txtBillID.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBillID.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.txtBillID.Location = new System.Drawing.Point(10, 77);
-            this.txtBillID.Margin = new System.Windows.Forms.Padding(4);
-            this.txtBillID.Name = "txtBillID";
-            this.txtBillID.Padding = new System.Windows.Forms.Padding(6);
-            this.txtBillID.Size = new System.Drawing.Size(113, 30);
-            this.txtBillID.TabIndex = 11;
-            this.txtBillID.UnderLineStyle = true;
             // 
             // panel4
             // 
@@ -561,54 +528,6 @@
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(828, 79);
             this.panel9.TabIndex = 17;
-            // 
-            // txtCustomerAddress
-            // 
-            this.txtCustomerAddress.BackColor = System.Drawing.Color.Transparent;
-            this.txtCustomerAddress.BorderColor1 = System.Drawing.Color.DeepSkyBlue;
-            this.txtCustomerAddress.BorderSize1 = 2;
-            this.txtCustomerAddress.CustomText = "";
-            this.txtCustomerAddress.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCustomerAddress.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.txtCustomerAddress.Location = new System.Drawing.Point(399, 35);
-            this.txtCustomerAddress.Margin = new System.Windows.Forms.Padding(4);
-            this.txtCustomerAddress.Name = "txtCustomerAddress";
-            this.txtCustomerAddress.Padding = new System.Windows.Forms.Padding(6);
-            this.txtCustomerAddress.Size = new System.Drawing.Size(399, 30);
-            this.txtCustomerAddress.TabIndex = 12;
-            this.txtCustomerAddress.UnderLineStyle = true;
-            // 
-            // txtCustomerPhone
-            // 
-            this.txtCustomerPhone.BackColor = System.Drawing.Color.Transparent;
-            this.txtCustomerPhone.BorderColor1 = System.Drawing.Color.DeepSkyBlue;
-            this.txtCustomerPhone.BorderSize1 = 2;
-            this.txtCustomerPhone.CustomText = "";
-            this.txtCustomerPhone.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCustomerPhone.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.txtCustomerPhone.Location = new System.Drawing.Point(227, 34);
-            this.txtCustomerPhone.Margin = new System.Windows.Forms.Padding(4);
-            this.txtCustomerPhone.Name = "txtCustomerPhone";
-            this.txtCustomerPhone.Padding = new System.Windows.Forms.Padding(6);
-            this.txtCustomerPhone.Size = new System.Drawing.Size(121, 30);
-            this.txtCustomerPhone.TabIndex = 13;
-            this.txtCustomerPhone.UnderLineStyle = true;
-            // 
-            // txtCustomerName
-            // 
-            this.txtCustomerName.BackColor = System.Drawing.Color.Transparent;
-            this.txtCustomerName.BorderColor1 = System.Drawing.Color.DeepSkyBlue;
-            this.txtCustomerName.BorderSize1 = 2;
-            this.txtCustomerName.CustomText = "";
-            this.txtCustomerName.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCustomerName.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.txtCustomerName.Location = new System.Drawing.Point(3, 36);
-            this.txtCustomerName.Margin = new System.Windows.Forms.Padding(4);
-            this.txtCustomerName.Name = "txtCustomerName";
-            this.txtCustomerName.Padding = new System.Windows.Forms.Padding(6);
-            this.txtCustomerName.Size = new System.Drawing.Size(192, 30);
-            this.txtCustomerName.TabIndex = 14;
-            this.txtCustomerName.UnderLineStyle = true;
             // 
             // label11
             // 
@@ -865,57 +784,6 @@
             this.panel6.Size = new System.Drawing.Size(358, 440);
             this.panel6.TabIndex = 0;
             // 
-            // txtCategory
-            // 
-            this.txtCategory.BackColor = System.Drawing.Color.Transparent;
-            this.txtCategory.BorderColor1 = System.Drawing.Color.DeepSkyBlue;
-            this.txtCategory.BorderSize1 = 2;
-            this.txtCategory.CustomText = "";
-            this.txtCategory.Enabled = false;
-            this.txtCategory.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCategory.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.txtCategory.Location = new System.Drawing.Point(13, 168);
-            this.txtCategory.Margin = new System.Windows.Forms.Padding(4);
-            this.txtCategory.Name = "txtCategory";
-            this.txtCategory.Padding = new System.Windows.Forms.Padding(6);
-            this.txtCategory.Size = new System.Drawing.Size(156, 30);
-            this.txtCategory.TabIndex = 16;
-            this.txtCategory.UnderLineStyle = true;
-            // 
-            // txtProductPrice
-            // 
-            this.txtProductPrice.BackColor = System.Drawing.Color.Transparent;
-            this.txtProductPrice.BorderColor1 = System.Drawing.Color.DeepSkyBlue;
-            this.txtProductPrice.BorderSize1 = 2;
-            this.txtProductPrice.CustomText = "";
-            this.txtProductPrice.Enabled = false;
-            this.txtProductPrice.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtProductPrice.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.txtProductPrice.Location = new System.Drawing.Point(199, 168);
-            this.txtProductPrice.Margin = new System.Windows.Forms.Padding(4);
-            this.txtProductPrice.Name = "txtProductPrice";
-            this.txtProductPrice.Padding = new System.Windows.Forms.Padding(6);
-            this.txtProductPrice.Size = new System.Drawing.Size(144, 30);
-            this.txtProductPrice.TabIndex = 16;
-            this.txtProductPrice.UnderLineStyle = true;
-            // 
-            // txtProductName
-            // 
-            this.txtProductName.BackColor = System.Drawing.Color.Transparent;
-            this.txtProductName.BorderColor1 = System.Drawing.Color.DeepSkyBlue;
-            this.txtProductName.BorderSize1 = 2;
-            this.txtProductName.CustomText = "";
-            this.txtProductName.Enabled = false;
-            this.txtProductName.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtProductName.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.txtProductName.Location = new System.Drawing.Point(12, 97);
-            this.txtProductName.Margin = new System.Windows.Forms.Padding(4);
-            this.txtProductName.Name = "txtProductName";
-            this.txtProductName.Padding = new System.Windows.Forms.Padding(6);
-            this.txtProductName.Size = new System.Drawing.Size(340, 30);
-            this.txtProductName.TabIndex = 15;
-            this.txtProductName.UnderLineStyle = true;
-            // 
             // btn_Clear
             // 
             this.btn_Clear.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
@@ -988,56 +856,6 @@
             this.label4.Size = new System.Drawing.Size(23, 19);
             this.label4.TabIndex = 6;
             this.label4.Text = "%";
-            // 
-            // txtTotalProduct
-            // 
-            this.txtTotalProduct.BackColor = System.Drawing.Color.Transparent;
-            this.txtTotalProduct.BorderColor1 = System.Drawing.Color.DeepSkyBlue;
-            this.txtTotalProduct.BorderSize1 = 2;
-            this.txtTotalProduct.CustomText = "";
-            this.txtTotalProduct.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotalProduct.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.txtTotalProduct.Location = new System.Drawing.Point(271, 265);
-            this.txtTotalProduct.Margin = new System.Windows.Forms.Padding(4);
-            this.txtTotalProduct.Name = "txtTotalProduct";
-            this.txtTotalProduct.Padding = new System.Windows.Forms.Padding(6);
-            this.txtTotalProduct.Size = new System.Drawing.Size(55, 30);
-            this.txtTotalProduct.TabIndex = 9;
-            this.txtTotalProduct.UnderLineStyle = true;
-            // 
-            // txtDiscount
-            // 
-            this.txtDiscount.BackColor = System.Drawing.Color.Transparent;
-            this.txtDiscount.BorderColor1 = System.Drawing.Color.DeepSkyBlue;
-            this.txtDiscount.BorderSize1 = 2;
-            this.txtDiscount.CustomText = "";
-            this.txtDiscount.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDiscount.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.txtDiscount.Location = new System.Drawing.Point(271, 218);
-            this.txtDiscount.Margin = new System.Windows.Forms.Padding(4);
-            this.txtDiscount.Name = "txtDiscount";
-            this.txtDiscount.Padding = new System.Windows.Forms.Padding(6);
-            this.txtDiscount.Size = new System.Drawing.Size(55, 30);
-            this.txtDiscount.TabIndex = 9;
-            this.txtDiscount.UnderLineStyle = true;
-            this.txtDiscount.TxtBoxTextChanged += new System.EventHandler(this.txtDiscount_TxtBoxTextChanged);
-            // 
-            // txtProductQuantity
-            // 
-            this.txtProductQuantity.BackColor = System.Drawing.Color.Transparent;
-            this.txtProductQuantity.BorderColor1 = System.Drawing.Color.DeepSkyBlue;
-            this.txtProductQuantity.BorderSize1 = 2;
-            this.txtProductQuantity.CustomText = "";
-            this.txtProductQuantity.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtProductQuantity.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.txtProductQuantity.Location = new System.Drawing.Point(84, 218);
-            this.txtProductQuantity.Margin = new System.Windows.Forms.Padding(4);
-            this.txtProductQuantity.Name = "txtProductQuantity";
-            this.txtProductQuantity.Padding = new System.Windows.Forms.Padding(6);
-            this.txtProductQuantity.Size = new System.Drawing.Size(85, 30);
-            this.txtProductQuantity.TabIndex = 9;
-            this.txtProductQuantity.UnderLineStyle = true;
-            this.txtProductQuantity.TxtBoxTextChanged += new System.EventHandler(this.txtProductQuantity_TxtBoxTextChanged);
             // 
             // panel8
             // 
@@ -1134,6 +952,189 @@
             this.Name_product.Size = new System.Drawing.Size(52, 22);
             this.Name_product.TabIndex = 8;
             this.Name_product.Text = "Price";
+            // 
+            // txtTotalPay
+            // 
+            this.txtTotalPay.BackColor = System.Drawing.Color.Transparent;
+            this.txtTotalPay.BorderColor1 = System.Drawing.Color.DeepSkyBlue;
+            this.txtTotalPay.BorderSize1 = 2;
+            this.txtTotalPay.CustomText = "";
+            this.txtTotalPay.Enabled = false;
+            this.txtTotalPay.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotalPay.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.txtTotalPay.Location = new System.Drawing.Point(74, 101);
+            this.txtTotalPay.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTotalPay.Name = "txtTotalPay";
+            this.txtTotalPay.Padding = new System.Windows.Forms.Padding(6);
+            this.txtTotalPay.Size = new System.Drawing.Size(194, 30);
+            this.txtTotalPay.TabIndex = 11;
+            this.txtTotalPay.UnderLineStyle = true;
+            // 
+            // txtBillID
+            // 
+            this.txtBillID.BackColor = System.Drawing.Color.Transparent;
+            this.txtBillID.BorderColor1 = System.Drawing.Color.DeepSkyBlue;
+            this.txtBillID.BorderSize1 = 2;
+            this.txtBillID.CustomText = "";
+            this.txtBillID.Enabled = false;
+            this.txtBillID.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBillID.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.txtBillID.Location = new System.Drawing.Point(74, 56);
+            this.txtBillID.Margin = new System.Windows.Forms.Padding(4);
+            this.txtBillID.Name = "txtBillID";
+            this.txtBillID.Padding = new System.Windows.Forms.Padding(6);
+            this.txtBillID.Size = new System.Drawing.Size(194, 30);
+            this.txtBillID.TabIndex = 11;
+            this.txtBillID.UnderLineStyle = true;
+            // 
+            // txtCustomerAddress
+            // 
+            this.txtCustomerAddress.BackColor = System.Drawing.Color.Transparent;
+            this.txtCustomerAddress.BorderColor1 = System.Drawing.Color.DeepSkyBlue;
+            this.txtCustomerAddress.BorderSize1 = 2;
+            this.txtCustomerAddress.CustomText = "";
+            this.txtCustomerAddress.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCustomerAddress.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.txtCustomerAddress.Location = new System.Drawing.Point(399, 35);
+            this.txtCustomerAddress.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCustomerAddress.Name = "txtCustomerAddress";
+            this.txtCustomerAddress.Padding = new System.Windows.Forms.Padding(6);
+            this.txtCustomerAddress.Size = new System.Drawing.Size(399, 30);
+            this.txtCustomerAddress.TabIndex = 12;
+            this.txtCustomerAddress.UnderLineStyle = true;
+            // 
+            // txtCustomerPhone
+            // 
+            this.txtCustomerPhone.BackColor = System.Drawing.Color.Transparent;
+            this.txtCustomerPhone.BorderColor1 = System.Drawing.Color.DeepSkyBlue;
+            this.txtCustomerPhone.BorderSize1 = 2;
+            this.txtCustomerPhone.CustomText = "";
+            this.txtCustomerPhone.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCustomerPhone.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.txtCustomerPhone.Location = new System.Drawing.Point(227, 34);
+            this.txtCustomerPhone.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCustomerPhone.Name = "txtCustomerPhone";
+            this.txtCustomerPhone.Padding = new System.Windows.Forms.Padding(6);
+            this.txtCustomerPhone.Size = new System.Drawing.Size(121, 30);
+            this.txtCustomerPhone.TabIndex = 13;
+            this.txtCustomerPhone.UnderLineStyle = true;
+            // 
+            // txtCustomerName
+            // 
+            this.txtCustomerName.BackColor = System.Drawing.Color.Transparent;
+            this.txtCustomerName.BorderColor1 = System.Drawing.Color.DeepSkyBlue;
+            this.txtCustomerName.BorderSize1 = 2;
+            this.txtCustomerName.CustomText = "";
+            this.txtCustomerName.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCustomerName.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.txtCustomerName.Location = new System.Drawing.Point(3, 36);
+            this.txtCustomerName.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCustomerName.Name = "txtCustomerName";
+            this.txtCustomerName.Padding = new System.Windows.Forms.Padding(6);
+            this.txtCustomerName.Size = new System.Drawing.Size(192, 30);
+            this.txtCustomerName.TabIndex = 14;
+            this.txtCustomerName.UnderLineStyle = true;
+            // 
+            // txtCategory
+            // 
+            this.txtCategory.BackColor = System.Drawing.Color.Transparent;
+            this.txtCategory.BorderColor1 = System.Drawing.Color.DeepSkyBlue;
+            this.txtCategory.BorderSize1 = 2;
+            this.txtCategory.CustomText = "";
+            this.txtCategory.Enabled = false;
+            this.txtCategory.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCategory.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.txtCategory.Location = new System.Drawing.Point(13, 168);
+            this.txtCategory.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCategory.Name = "txtCategory";
+            this.txtCategory.Padding = new System.Windows.Forms.Padding(6);
+            this.txtCategory.Size = new System.Drawing.Size(156, 30);
+            this.txtCategory.TabIndex = 16;
+            this.txtCategory.UnderLineStyle = true;
+            // 
+            // txtProductPrice
+            // 
+            this.txtProductPrice.BackColor = System.Drawing.Color.Transparent;
+            this.txtProductPrice.BorderColor1 = System.Drawing.Color.DeepSkyBlue;
+            this.txtProductPrice.BorderSize1 = 2;
+            this.txtProductPrice.CustomText = "";
+            this.txtProductPrice.Enabled = false;
+            this.txtProductPrice.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtProductPrice.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.txtProductPrice.Location = new System.Drawing.Point(199, 168);
+            this.txtProductPrice.Margin = new System.Windows.Forms.Padding(4);
+            this.txtProductPrice.Name = "txtProductPrice";
+            this.txtProductPrice.Padding = new System.Windows.Forms.Padding(6);
+            this.txtProductPrice.Size = new System.Drawing.Size(144, 30);
+            this.txtProductPrice.TabIndex = 16;
+            this.txtProductPrice.UnderLineStyle = true;
+            // 
+            // txtProductName
+            // 
+            this.txtProductName.BackColor = System.Drawing.Color.Transparent;
+            this.txtProductName.BorderColor1 = System.Drawing.Color.DeepSkyBlue;
+            this.txtProductName.BorderSize1 = 2;
+            this.txtProductName.CustomText = "";
+            this.txtProductName.Enabled = false;
+            this.txtProductName.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtProductName.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.txtProductName.Location = new System.Drawing.Point(12, 97);
+            this.txtProductName.Margin = new System.Windows.Forms.Padding(4);
+            this.txtProductName.Name = "txtProductName";
+            this.txtProductName.Padding = new System.Windows.Forms.Padding(6);
+            this.txtProductName.Size = new System.Drawing.Size(340, 30);
+            this.txtProductName.TabIndex = 15;
+            this.txtProductName.UnderLineStyle = true;
+            // 
+            // txtTotalProduct
+            // 
+            this.txtTotalProduct.BackColor = System.Drawing.Color.Transparent;
+            this.txtTotalProduct.BorderColor1 = System.Drawing.Color.DeepSkyBlue;
+            this.txtTotalProduct.BorderSize1 = 2;
+            this.txtTotalProduct.CustomText = "";
+            this.txtTotalProduct.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotalProduct.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.txtTotalProduct.Location = new System.Drawing.Point(271, 265);
+            this.txtTotalProduct.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTotalProduct.Name = "txtTotalProduct";
+            this.txtTotalProduct.Padding = new System.Windows.Forms.Padding(6);
+            this.txtTotalProduct.Size = new System.Drawing.Size(55, 30);
+            this.txtTotalProduct.TabIndex = 9;
+            this.txtTotalProduct.UnderLineStyle = true;
+            // 
+            // txtDiscount
+            // 
+            this.txtDiscount.BackColor = System.Drawing.Color.Transparent;
+            this.txtDiscount.BorderColor1 = System.Drawing.Color.DeepSkyBlue;
+            this.txtDiscount.BorderSize1 = 2;
+            this.txtDiscount.CustomText = "";
+            this.txtDiscount.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDiscount.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.txtDiscount.Location = new System.Drawing.Point(271, 218);
+            this.txtDiscount.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDiscount.Name = "txtDiscount";
+            this.txtDiscount.Padding = new System.Windows.Forms.Padding(6);
+            this.txtDiscount.Size = new System.Drawing.Size(55, 30);
+            this.txtDiscount.TabIndex = 9;
+            this.txtDiscount.UnderLineStyle = true;
+            this.txtDiscount.TxtBoxTextChanged += new System.EventHandler(this.txtDiscount_TxtBoxTextChanged);
+            // 
+            // txtProductQuantity
+            // 
+            this.txtProductQuantity.BackColor = System.Drawing.Color.Transparent;
+            this.txtProductQuantity.BorderColor1 = System.Drawing.Color.DeepSkyBlue;
+            this.txtProductQuantity.BorderSize1 = 2;
+            this.txtProductQuantity.CustomText = "";
+            this.txtProductQuantity.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtProductQuantity.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.txtProductQuantity.Location = new System.Drawing.Point(84, 218);
+            this.txtProductQuantity.Margin = new System.Windows.Forms.Padding(4);
+            this.txtProductQuantity.Name = "txtProductQuantity";
+            this.txtProductQuantity.Padding = new System.Windows.Forms.Padding(6);
+            this.txtProductQuantity.Size = new System.Drawing.Size(85, 30);
+            this.txtProductQuantity.TabIndex = 9;
+            this.txtProductQuantity.UnderLineStyle = true;
+            this.txtProductQuantity.TxtBoxTextChanged += new System.EventHandler(this.txtProductQuantity_TxtBoxTextChanged);
             // 
             // frmOrders
             // 
